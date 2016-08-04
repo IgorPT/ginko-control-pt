@@ -1,0 +1,36 @@
+	<div ng-controller='templates'>
+	    <span>Please select a customer:</span>
+			<div ng-repeat="t in tempaltes">
+				<div data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{animate:true}">{{t.name}}</div>
+			</div>
+	</div>
+	<div ng-controller='layout'>
+	    <span>order elemsts:</span>
+			<div data-drop="true" data-jqyoui-option jqyoui-droppable style="border:1px solid #ddd; height:300px">
+				<div ng-repeat="e in elements">
+					<div>{{e.template}}</div>
+				</div>
+		</div>
+	</div>
+
+	<script type='text/javascript'>
+	'use strict';
+
+	var App = angular.module('appCtrl', ['ngDragDrop']);
+
+	App.controller('layout', function($scope, $http) {
+	  $http.get('layout.json')
+	       .then(function(res){
+					 $scope.elements = res.data.data;
+	        });
+	}).controller('templates', function($scope, $http) {
+		 $scope.selectedLements = [];
+
+		$http.get('templates.json')
+				 .then(function(res){
+					 $scope.tempaltes = res.data.data;
+					});
+	});
+
+
+	</script>

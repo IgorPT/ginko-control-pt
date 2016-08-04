@@ -1,0 +1,49 @@
+<div class="preview">Upload repeater</div>
+<div class="frontend">
+
+      [[#each repIt]]
+        [[#if oddeven]]
+          <div class="col-sm-4 col [[oddeven]]">
+            <div class="nav-block-img-2" style="background-image:url('[[item_file]]') "></div>
+          </div>
+        [[else]]
+          <div class="col-sm-4 col [[oddeven]]">
+            <div class="nav-block-img-2" style="background-image:url('[[item_file]]') "></div>
+          </div>
+        [[/if]]
+      [[/each]]
+      <!-- /LOOP -->
+</div>
+<div class="summary">
+
+</div>
+
+<div class="backend">
+  <div class="box box-element ui-draggable ng-scope lyrow">
+    <div class="row-fluid clearfix ng-scope">
+      <h3>Group Info</h3>
+      <div data-id="{{repeatfront=repIt}}" data-repeat="itemloop in">
+        <div class="col-md-7 column ui-sortable form-horizontal">
+            <!-- add more inputs if needed name is the smae as in front end-->
+            <div class="clearfix">
+              <a class="btn btn-danger pull-right" href="#" data-id="{{repeatfront=repIt}}" data-function="delThisEle" data-params="$index">X</a>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Image</label>
+              <div class="col-sm-7">
+                <input data-model="itemloop.item_file" name="{{file}}" class="input-file filebutton" type="file">
+                <input data-id="{{repeatfront=repIt}}" class="filebuttoncta" type="button" data-function="uploadImage" data-params="itemloop, 'item_file'" value="Upload">
+              </div>
+              <div class="col-sm-3">{{item_file}}</div>
+            </div>
+
+            <!-- data-id="{{repeatfront=repIt}}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+        </div>
+      </div>
+      <div class="col-md-12">
+        <button class="btn btn-primary navbar-btn" data-id="{{repeatfront=repIt}}" data-function="addanother" data-params="{item_file:''}">Add another</button>
+      </div>
+    </div>
+  </div>
+</div>

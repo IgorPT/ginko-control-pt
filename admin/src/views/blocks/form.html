@@ -1,0 +1,283 @@
+<ul class="nav nav-list accordion-group">
+    <li class="nav-header">
+        <i class="icon-plus icon-white"></i> FORMS
+        <div class="pull-right popover-info">
+            <i class="icon-question-sign "></i>
+        </div>
+    </li>
+    <li style="display: none;" class="boxes" id="elmComponents">
+
+        <!--LABEL-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+              <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+
+              <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+              <span class="configuration">
+                <button type="button" class="btn btn-mini" data-target="#editorModal" role="button" data-toggle="modal">Editor</button>
+                <span class="btn-group">
+                  <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Styles <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="active"><a href="#" rel="">Default</a></li>
+                        <li class=""><a href="#" rel="badge-success">Success</a></li>
+                        <li class=""><a href="#" rel="badge-warning">Warning</a></li>
+                        <li class=""><a href="#" rel="badge-important">Important</a></li>
+                        <li class=""><a href="#" rel="badge-info">Info</a></li>
+                        <li class=""><a href="#" rel="badge-inverse">Inverse</a></li>
+                    </ul>
+                    </span>
+                </span>
+            </div>
+            <div class="preview">Label</div>
+            <div class="view">
+                <label class="control-label" contenteditable="true">Label</label>
+            </div>
+        </div>
+        <!--INPUT-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+          </div>
+            <div class="preview">Input</div>
+            <div class="view">
+                <input type="text" value="{{input}}" class='form-control' />
+            </div>
+        </div>
+        <!--Password Input-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+          </div>
+          <div class="preview">Password input</div>
+            <div class="view">
+                <input type="password" class='form-control' value="{{password}}" placeholder="insert your password here" />
+            </div>
+        </div>
+        <!--Email Input-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+          </div>
+          <div class="preview">Email input</div>
+            <div class="view">
+                <input type="email" class='form-control' value="{{email}}" placeholder="type your email here" />
+            </div>
+        </div>
+        <!--Text Area-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+          </div>
+          <div class="preview">Text Area</div>
+            <div class="view">
+                <textarea class='form-control'>{{textarea}}</textarea>
+            </div>
+        </div>
+        <!--Checkbox inline-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+          </div>
+            <div class="preview">Inline Checkbox</div>
+            <div class="view">
+                <label class="checkbox-inline" for="checkboxes-0">
+                    <input type="checkbox" name="checkboxes" id="checkboxes-0" value="{{checkboxes1}}"> 1 </label>
+                <label class="checkbox-inline" for="checkboxes-1">
+                    <input type="checkbox" name="checkboxes" id="checkboxes-1" value="{{checkboxes2}}"> 2
+                </label>
+                <label class="checkbox-inline" for="checkboxes-2">
+                    <input type="checkbox" name="checkboxes" id="checkboxes-2" value="{{checkboxes3}}"> 3
+                </label>
+                <label class="checkbox-inline" for="checkboxes-3">
+                    <input type="checkbox" name="checkboxes" id="checkboxes-3" value="{{checkboxes4}}"> 4
+                </label>
+            </div>
+        </div>
+        <!--multiple checkbox-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+          </div>
+          <div class="preview">Multiple Checkbox</div>
+            <div class="view">
+                <div class="checkbox">
+                    <label for="checkboxes-0">
+                        <input type="checkbox" name="checkboxes" id="checkboxes-0" value="{{checkboxes1}}"> Option one
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkboxes-1">
+                        <input type="checkbox" name="checkboxes" id="checkboxes-1" value="{{checkboxes2}}"> Option two
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!--radio inline-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+          </div>
+          <div class="preview">Inline Radio</div>
+            <div class="view">
+                <label class="radio-inline" for="radios-0">
+                    <input type="radio" name="radios" id="radios-0" value="{{radio1}}" checked="checked"> 1
+                </label>
+                <label class="radio-inline" for="radios-1">
+                    <input type="radio" name="radios" id="radios-1" value="{{radio2}}"> 2
+                </label>
+                <label class="radio-inline" for="radios-2">
+                    <input type="radio" name="radios" id="radios-2" value="{{radio3}}"> 3
+                </label>
+                <label class="radio-inline" for="radios-3">
+                    <input type="radio" name="radios" id="radios-3" value="{{radio4}}"> 4
+                </label>
+            </div>
+        </div>
+        <!--Multiple radio-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+          </div>
+            <div class="preview">Multiple Radio</div>
+            <div class="view">
+                <div class="radio">
+                    <label for="radios-0">
+                        <input type="radio" name="radios" id="radios-0" value="{{radio1}}" checked="checked"> Option one
+                    </label>
+                </div>
+                <div class="radio">
+                    <label for="radios-1">
+                        <input type="radio" name="radios" id="radios-1" value="{{radio2}}"> Option two
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!--Basic  Select-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+          </div>
+            <div class="preview">Basic Select</div>
+            <div class="view">
+                <select id="selectbasic" name="selectbasic" class="form-control">
+                    <option value="{{option1}}">Option one</option>
+                    <option value="{{option2}}">Option two</option>
+                </select>
+            </div>
+        </div>
+        <!--Multiple  Select-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+          </div>
+            <div class="preview">Multiple Select</div>
+            <div class="view">
+                <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+                    <option value="{{option1}}">Option one</option>
+                    <option value="{{option2}}">Option two</option>
+                </select>
+            </div>
+        </div>
+        <!--File  Button-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+          </div>
+          <div class="preview">File Button</div>
+            <div class="view">
+                <input id="filebutton" name="filebutton" class="input-file" type="file">
+            </div>
+        </div>
+        <!--BUTTON-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span>
+            <span class="configuration">
+                      <span class="btn-group">
+                        <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Styles <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li class="active"><a href="#" rel="">Default</a></li>
+                <li class=""><a href="#" rel="btn-primary">Primary</a></li>
+                <li class=""><a href="#" rel="btn-info">Info</a></li>
+                <li class=""><a href="#" rel="btn-success">Success</a></li>
+                <li class=""><a href="#" rel="btn-warning">Warning</a></li>
+                <li class=""><a href="#" rel="btn-danger">Danger</a></li>
+                <li class=""><a href="#" rel="btn-inverse">Inverse</a></li>
+                <li class=""><a href="#" rel="btn-link">Link</a></li>
+            </ul>
+            </span>
+            <span class="btn-group">
+                        <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Size <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li class=""><a href="#" rel="btn-large">Large</a></li>
+                <li class="active"><a href="#" rel="">Default</a></li>
+                <li class=""><a href="#" rel="btn-small">Small</a></li>
+                <li class=""><a href="#" rel="btn-mini">Mini</a></li>
+            </ul>
+            </span>
+            <a class="btn btn-mini" href="#" rel="btn-block">Block</a> <a class="btn btn-mini" href="#" rel="disabled">Disabled</a>
+            </span>
+          </div>
+            <div class="preview">Button</div>
+            <div class="view">
+                <button class="btn" type="button" contenteditable="true">Button</button>
+            </div>
+        </div>
+        <!--BTN-DROPDOWN-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a> <span class="drag label"><i class="icon-move"></i>Drag</span> <span class="configuration"><button type="button" class="btn btn-mini" data-target="#editorModal" role="button" data-toggle="modal">Editor</button> <a class="btn btn-mini" href="#" rel="dropup">Dropup</a> </span>
+          </div>
+            <div class="preview">Button Dropdowns</div>
+            <div class="view">
+                <div class="btn-group">
+                    <button class="btn btn-default" contenteditable="true">Action</button>
+                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+                    <ul class="dropdown-menu" contenteditable="true">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another Action</a></li>
+                        <li><a href="#">Something Else here</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">More Option</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another Action</a></li>
+                                <li><a href="#">Something Else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--BTN-TOOLBAR-->
+        <div class="box box-element ui-draggable">
+          <div class="controls">
+            <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+            <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+            <span class="drag label"><i class="icon-move"></i>Drag</span>
+          </div>
+          <div class="preview">Button Toolbar</div>
+            <div class="view">
+                <div class="btn-toolbar">
+                    <button class="btn btn-default">Back</button>
+                    <button class="btn btn-primary">Continue</button>
+                    <span class="column" style="height: 40px, width: 200px, background-color: green">bla</span>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>

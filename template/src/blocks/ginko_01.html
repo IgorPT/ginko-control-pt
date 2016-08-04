@@ -1,0 +1,124 @@
+<div class="preview">Header</div>
+<div class="frontend">
+   <div class="header">
+      <div class="topHeader">
+        <div class="container">
+          <div class="row">
+            <div class="logo col-lg-3 col-md-3 col-sm-4 col-xs-6">
+              <a href="#">
+                <img class="logoDesktop" src="/assets/img/logoGinko.png" alt="ginko">
+                <img class="logoMobile" src="/assets/img/logoMobile.png" alt="ginko">
+              </a>
+            </div>
+            <div class="nav col-lg-9 col-md-9 col-sm-8 col-xs-6">
+              <ul class="mainMenu lato-light">
+                <li class="home">
+                  <a href="#"><img src="/assets/img/home.png" alt="home"></a>
+                </li>
+                {{#if menus}}
+                  {{#each menus}}
+                  <li>
+                    <a href="{{path}}">{{name}}</a>
+                  </li>
+                  {{/each}}
+                {{/if}}
+              </ul>
+
+              <!--Mobile Menu-->
+              <div class="mobileMenu lato-light">
+                    <div class="main-menu-mobile">
+                        <div class="menu-hamburguer">
+                            <img src="/assets/img/hamburguer.png" alt="Ginko Menu">
+                        </div>
+                    </div>
+                    <div class="menu-hamburguer-expand">
+                        <div class="arrow-up"></div>
+                        <div class="menu-expand-block">
+                          <ul class="mobileMenuList lato-light">
+                            <li class="home"><a href="">Home</a></li>
+                            {{#if menus}}
+                              {{#each menus}}
+                              <li>
+                                <a href="{{path}}">{{name}}</a>
+                              </li>
+                              {{/each}}
+                            {{/if}}
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slideshow">
+        <div class="headerSlide">
+          <div class="sliders">
+              <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div" data-cycle-pager=".example-pager" style="width:100%"  data-cycle-prev=".prev" data-cycle-next=".next">
+
+                  [[#each repSlide]]
+                  <div class="slide slideOne" style="background: url([[item_file]]) no-repeat top center transparent; background-size: cover;">
+                      <div class="bgOverlay"></div>
+                      <div class="container">
+                          <div class="contentArea">
+                              <h1 class="uppercase lato-regular wow animated flipInX">[[[item_slideDescription]]]</h1>
+                          </div>
+                      </div>
+                  </div>
+                  [[/each]]
+
+              </div>
+              <div class="arrowCenter">
+                  <a href="#" class="prev"></a>
+                  <a href="#" class="next"></a>
+              </div>
+              <div class="pager">
+                <div class="example-pager"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+<div class="summary"></div>
+<div class="backend">
+    <div class="box box-element ui-draggable ng-scope lyrow">
+      <div class="row-fluid clearfix ng-scope">
+
+          <div data-id="{{repeatfront=repSlide}}" data-repeat="itemloop in">
+              <div class="col-md-12 column ui-sortable form-horizontal">
+                <!-- add more inputs if needed name is the smae as in front end-->
+                <div class="clearfix">
+                  <a class="btn btn-danger pull-right" href="#" data-id="{{repeatfront=repSlide}}" data-function="delThisEle" data-params="$index">X</a>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Slide Image</label>
+                  <div class="col-sm-7">
+                    <input data-model="itemloop.item_file" name="{{file}}" class="input-file filebutton" type="file">
+                    <input data-id="{{repeatfront=repSlide}}" class="filebuttoncta btn" type="button" data-function="uploadImage" data-params="{index: $index, key: 'item_file'}" value="Upload">
+                  </div>
+                  <div class="col-sm-3">
+                    <input data-model="itemloop.item_file" type="text" class='uploadPreview-src form-control' name="title" />
+                    <div class="uploadPreview"></div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Slide Text</label>
+                    <div class="col-sm-10">
+                        <input data-model="itemloop.item_slideDescription" type="text" class='form-control' name="slideDescription" value="{{itemloop.item_slideDescription}}" />
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-md-12">
+            <button class="btn btn-primary navbar-btn" data-id="{{repeatfront=repSlide}}" data-function="addanother" data-params="{item_file:'', item_slideDescription:''}">Add another</button>
+          </div>
+
+      </div>
+    </div>
+</div>

@@ -1,0 +1,152 @@
+<div class="preview">Three Block Section</div>
+<div class="frontend">
+  <div class="sectionGrey">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="introHome">
+              <h2 class="uppercase lato-light">{{{introTitle}}}<br>{{{introSecondLineTitle}}}</h2>
+            </div>
+          </div>
+            <div class="product-slideshow">
+              [[#each repOne]]
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="blockOfThree">
+                  <div class="imgBlockThree relative">
+                    <img src="[[item_threeBlockImg]]">
+                    <div class="imgDescription uppercase lato-regular">[[item_imgTitle]]</div>
+                  </div>
+                  <div class="txtBlockThree lato-regular">
+                    <p>
+                      [[[item_txtThreeBlock]]]
+                    </p>
+                  </div>
+                  <div class="btnBlockThree lato-bold">
+                    <a class="btnMais uppercase" href="[[item_seeMoreLink]]">[[item_seeMoreBtn]]</a>
+                  </div>
+                </div>
+              </div>
+              [[/each]]
+            </div>
+            <div class="arrowCenter greyArrow">
+              <a href="#" class="prev"></a> 
+              <a href="#" class="next"></a>
+          </div>
+          <div class="pagerProduct">
+            <div class="product-pager"></div>
+          </div>
+
+        </div>
+        <div class="row btnVerGeral">
+            <a class="btnMais uppercase" href="{{genBtnUrl}}">{{genBtnTxt}}</a>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+<div class="summary"></div>
+<div class="backend">
+
+    <div class="box box-element ui-draggable ng-scope lyrow">
+      <div class="row-fluid clearfix ng-scope">
+
+        <div class="col-md-12 column ui-sortable form-horizontal">
+            <h3>Intro Title (optional)
+            <br>
+            First Line
+            </h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Section Title</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="mainTitle" value="{{introTitle}}" />
+              </div>
+            </div>
+
+
+
+            <h3>Second Line Title</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Second Line Title (optional)</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="btnSeeMore" value="{{introSecondLineTitle}}" />
+              </div>
+            </div>
+
+            <!--Image Area Repeater-->
+            <!-- data-id="{{repeatfront=repOne}}" data-repeat="itemloop in" tem que exitir -->
+            <h3>Three  Blocks Repeater</h3>
+            <div data-id="{{repeatfront=repOne}}" data-repeat="itemloop in">
+
+              <!-- add more inputs if needed name is the smae as in front end-->
+              <div class="clearfix">
+                <a class="btn btn-danger pull-right" href="#" data-id="{{repeatfront=repOne}}" data-function="delThisEle" data-params="$index">X</a>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Image Upload</label>
+                <div class="col-sm-7">
+                  <input data-model="itemloop.item_threeBlockImg" name="{{item_threeBlockImg}}" class="input-file filebutton" type="file">
+                  <input data-id="{{repeatfront=repOne}}" class="filebuttoncta btn" type="button" data-function="uploadImage" data-params="itemloop, 'item_threeBlockImg'" value="Upload">
+                </div>
+                <div class="col-sm-3">
+                  <input data-model="itemloop.item_threeBlockImg" type="text" class='uploadPreview-src form-control' name="title" />
+                  <div class="uploadPreview"></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Image Title</label>
+                <div class="col-sm-10">
+                  <input type="text" class='form-control' data-model="itemloop.item_imgTitle"/>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Block Text</label>
+                <div class="col-sm-10">
+                  <textarea data-tinymce type="textarea" name="txtThreeBlock" data-model="itemloop.item_txtThreeBlock"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Button Text</label>
+                <div class="col-sm-10">
+                  <input type="text" data-model="itemloop.item_seeMoreBtn" class='form-control' />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Button URL</label>
+                <div class="col-sm-10">
+                  <input type="text" data-model="itemloop.item_seeMoreLink" class='form-control' />
+                </div>
+              </div>
+
+
+              <!-- data-id="{{repeatfront=repOne}}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+            </div>
+            <button class="btn btn-primary navbar-btn" data-id="{{repeatfront=repOne}}" data-function="addanother" data-params="{item_threeBlockImg:'', item_imgTitle:'', item_txtThreeBlock:'', item_seeMoreBtn:'', item_seeMoreLink:''}">Add another</button>
+            
+            <h3>Button</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Button Text</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="genBtnTxt" value="{{genBtnTxt}}" />
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Button URL</label>
+                <div class="col-sm-10">
+                  <input type="text" class='form-control' name="genBtnUrl" value="{{genBtnUrl}}" />
+                </div>
+            </div>
+            <!-- data-id="{{repeatfront=repOne}}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+        </div>
+
+      </div>
+    </div>
+
+</div>

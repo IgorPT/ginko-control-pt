@@ -1,0 +1,173 @@
+<div class="preview">Contact Block</div>
+<div class="frontend">
+
+    <div class="sectionWhite bgWhite">
+      <div class="container">
+        <div class="row">
+          <div class="formContent col-lg-5 col-md-5 col-lg-push-7 col-md-push-7 col-sm-6 col-sm-push-6">
+            <div class="formBlock">
+                <div class="form_box">
+                  <div class="close"></div>
+                  <div class="form-header uppercase lato-light">
+                    <img src="/assets/img/buyLogo.png">
+                    <span class="lato-bold">formulário</span> contacto
+                  </div>
+                  <div id="formulario">
+                    <div class="frmBody">
+                      <div class="loading"></div>
+
+                      <div class="obrigado">
+                      <br><br>
+                      <h4 style="font-size:31px;">Obrigado pelo seu contacto</h4>
+                      <br><br>
+                      </div>
+
+                      <div class="form">
+                          <div class="content_input">
+                          <input class="caixas check nome" name="nome" autocomplete="on" type="text" id="nome" placeholder="Nome Completo">
+                            <div class="error">Por favor preencha o seu nome</div>
+                          </div>
+                          <div class="content_input">
+                          <input type="text" id="email" name="name" autocomplete="on" class="caixas check email" placeholder="Email">
+                            <div class="error">Por favor preencha o seu email</div>
+                          </div>
+                          <div class="content_input contentTextarea">
+                            <textarea id="aditional" name="aditional" class="caixas check aditional" placeholder="Mensagem" rows="4" cols="50"></textarea>
+                            <div class="error">Por favor escreva a mensagem</div>
+                          </div>
+                            <a class="btnEnviar enviar lato-bold uppercase" href="#">Enviar</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="contactsContent col-lg-7 col-md-7 col-lg-pull-5 col-md-pull-5 col-sm-6 col-sm-pull-6">
+            <div class="contactsBlock">
+              <div class="row">
+
+                <div class="emailContact col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="emailDetail lato-regular">
+                    {{emailContact}}
+                  </div>
+                </div>
+                <div class="telContact col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="telDetail lato-regular">
+                    {{mobileContact}}
+                  </div>
+                </div>
+              </div>
+
+              <input id="mapCoordsLat" type="hidden" value="{{mapLat}}">
+              <input id="mapCoordsLng" type="hidden" value="{{mapLng}}">
+
+              <div id="mapa" class="map">
+                  <!--{{{gmaps}}}-->
+              </div>
+              <div class="socialIcons">
+                <ul class="socialList">
+                  <li>
+                    <a target="_blank" href="{{fbLink}}">
+                      <img src="/assets/img/fbMap.png" alt="Facebook">
+                    </a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="{{twitterLink}}">
+                      <img src="/assets/img/twitterMap.png" alt="Twitter">
+                    </a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="{{youtubeLink}}">
+                      <img src="/assets/img/youtubeMap.png" alt="Youtube">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="contactDetails lato-light">
+                  {{{contactDetails}}}
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+</div>
+<div class="summary"></div>
+<div class="backend">
+    <div class="box box-element ui-draggable ng-scope lyrow">
+      <div class="row-fluid clearfix ng-scope">
+
+        <div class="col-md-12 column ui-sortable form-horizontal">
+
+            <h3>Contact Fields</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Email</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="emailContact" value="{{emailContact}}" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Mobile</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="mobileContact" value="{{mobileContact}}" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Facebook</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="fbLink" value="{{fbLink}}" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Twitter</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="twitterLink" value="{{twitterLink}}" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Youtube</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="youtubeLink" value="{{youtubeLink}}" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label class="col-sm-4 control-label">Google Maps Latitude</label>
+                  <div class="col-sm-8">
+                    <input type="text" class='form-control' name="gmaps" value="{{mapLat}}" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="col-sm-4 control-label">Google Maps Longitude</label>
+                  <div class="col-sm-8">
+                    <input type="text" class='form-control' name="gmaps" value="{{mapLng}}" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <h3>Contact Details</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Contact Details</label>
+              <div class="col-sm-10">
+                <textarea data-tinymce class='form-control' name="contactDetails" value="{{contactDetails}}"></textarea>
+              </div>
+            </div>
+
+        </div>
+
+      </div>
+    </div>
+
+</div>

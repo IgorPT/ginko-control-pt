@@ -1,0 +1,36 @@
+<div class="row-fluid clearfix box box-element">
+  <h4>SEO</h4>
+  <div class="row">
+    <div class="col-md-12">
+      <label>Page Title</label>
+      <input type="text" name="header_title" class="form-control" ng-model="setData.templateCnt.seo.pagetitle" placeholder="Page Title">
+      <br>
+
+      <label>Keywords</label>
+      <input type="text" name="header_keywords" class="form-control" ng-model="setData.templateCnt.seo.keywords" placeholder="Page Keywords">
+      <br>
+
+      <label>SEO Title</label>
+      <input type="text" name="header_seotitle" class="form-control" ng-model="setData.templateCnt.seo.seotitle" placeholder="SEO Title">
+      <br>
+
+      <label>Meta Tags (one per line)</label>
+      <textarea name="header_metatags" class="form-control" ng-model="setData.templateCnt.seo.metatags" placeholder="Meta Description etc."></textarea>
+      <br>
+    </div>
+  </div>
+</div>
+  <h4>Repeater Header Galery</h4>
+  <!-- data-id="{{itemloop.repIt}}" data-repeat="itemloop in" tem que exitir -->
+  <div>
+        <li ng-repeat="itemloop in setData.templateCnt.repIt_headerGalery">
+          <input file-model="itemloop.item_file" name="file" class="input-file filebutton" type="file">
+          <input ng-model="itemloop.item_file" name="filepath" class="input-file filebutton" type="text">
+          <input class="filebuttoncta" type="button" ng-click="uploadImage(itemloop,'item_file')" value="Upload">
+          <textarea data-tinymce type="textarea" name="item_desc" ng-model="itemloop.item_desc" value="itemloop.item_desc"></textarea>
+          <!-- add more inputs if needed name is the smae as in front end-->
+          <a href="#" ng-click="delThisEle($index)" data-params="$index">X</a>
+    </li>
+    <!-- data-id="{{itemloop.repIt}}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+    <button class="btn btn-primary navbar-btn" ng-click="addanother('setData.templateCnt.repIt_headerGalery',{item_file:''})">Add another</button>
+  </div>

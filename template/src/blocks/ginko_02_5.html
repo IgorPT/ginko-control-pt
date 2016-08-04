@@ -1,0 +1,99 @@
+<div class="preview">News Input</div>
+<div class="frontend">
+    <div class="sectionWhite bgWhite">
+      <div class="container">
+      [[#each repFive]]
+        <div class="newsSection">
+          <div class="row">
+            <div class="newsImg col-lg-2 col-md-2 col-sm-3 col-xs-12">
+              <img src="[[item_newsImg]]">
+            </div>
+            <div class="newsDescription col-lg-10 col-md-10 col-sm-9 col-xs-12">
+              <h4 class="lato-regular">[[item_newsTitle]]</h4>
+              <div class="newsTxtBlock lato-light">
+
+                   [[[item_newsTxt]]]
+
+              </div>
+              <div class="fullArticle lato-regular">
+                <a class="btnReadMore uppercase" href="[[item_newsLink]]" target="_blank">[[item_fullArticle]]</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      [[/each]]
+      </div>
+    </div>
+</div>
+<div class="summary"></div>
+<div class="backend">
+    <div class="box box-element ui-draggable ng-scope lyrow">
+      <div class="row-fluid clearfix ng-scope">
+
+        <div class="col-md-12 column ui-sortable form-horizontal">
+
+
+          <!--Image Area Repeater Two-->
+          <!-- data-id="{{repeatfront=repFive}}" data-repeat="itemloop in" tem que exitir -->
+          <h3>News Repeater</h3>
+          <div data-id="{{repeatfront=repFive}}" data-repeat="itemloop in">
+
+              <!-- add more inputs if needed name is the smae as in front end-->
+              <div class="clearfix">
+                <a class="btn btn-danger pull-right" href="#" data-id="{{repeatfront=repFive}}" data-function="delThisEle" data-params="$index">X</a>
+              </div>
+
+              <div class="form-group">
+                  <h3>News Image Upload</h3>
+                  <label class="col-sm-2 control-label">News Image Upload</label>
+                  <div class="col-sm-7">
+                    <input data-model="itemloop.item_newsImg" name="{{item_newsImg}}" class="input-file filebutton" type="file">
+                    <input data-id="{{repeatfront=repFive}}" class="filebuttoncta btn" type="button" data-function="uploadImage" data-params="itemloop, 'item_newsImg'" value="Upload">
+                  </div>
+                  <div class="col-sm-3">
+                    <input data-model="itemloop.item_newsImg" type="text" class='uploadPreview-src form-control' name="title" />
+                    <div class="uploadPreview"></div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <h3>News Title</h3>
+                <label class="col-sm-2 control-label">News Title</label>
+                <div class="col-sm-10">
+                  <input type="text" name="newsTitle" class='form-control' data-model="itemloop.item_newsTitle"/>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <h3>News Text</h3>
+                <label class="col-sm-2 control-label">News Text</label>
+                <div class="col-sm-10">
+                  <textarea data-tinymce type="textarea" class='form-control' name="item_newsTxt" data-model="itemloop.item_newsTxt"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Button Full Article</label>
+                <div class="col-sm-10">
+                  <input type="text" data-model="itemloop.item_fullArticle" class='form-control' />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Item Link Article</label>
+                <div class="col-sm-10">
+                  <input type="text" name="newsLink" data-model="itemloop.item_newsLink" class='form-control' />
+                </div>
+              </div>
+
+          </div>
+          <!-- data-id="{{repeatfront=repTwo}}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+          <button class="btn btn-primary navbar-btn" data-id="{{repeatfront=repFive}}" data-function="addanother" data-params="{item_newsImg:'', item_newsTitle:'', item_newsTxt:'', item_fullArticle:'', item_newsLink:'' }">Add another</button>
+
+        </div>
+
+      </div>
+    </div>
+
+</div>

@@ -1,0 +1,9 @@
+{"k":"0000000078","o":"0000000100","v":"001"}
+{"_id":2,"_uid":2,"_dt":1463590963182,"_s":"f6e844914a8281e3c9925bf5b4ca84a7"}
+{"name":"Admin","group":"admin","login":true,"paths":["/admin/*","/*"],"_id":{"$wrap":"$oid","v":2}}
+{"k":"0000000078","o":"0000000090","v":"001"}
+{"_id":3,"_uid":3,"_dt":1463590963183,"_s":"a81e4ec7e2a8b26e282ded725e3f5444"}
+{"name":"Guest","group":"guest","login":false,"paths":["/*"],"_id":{"$wrap":"$oid","v":3}}
+{"k":"0000000078","o":"0000000097","v":"001"}
+{"_id":4,"_uid":4,"_dt":1463594709460,"_s":"d089e2e75d3619cb6ecec619315d1167"}
+{"name":"Ginko","group":"ginko","login":false,"_id":{"$wrap":"$oid","v":4},"paths":["/"],"__v":0}

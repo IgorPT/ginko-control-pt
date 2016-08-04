@@ -1,0 +1,88 @@
+  {{#content "footer"}}
+  <div class="footer">
+
+    <div class="diamond">
+      <div class="arrowUp"></div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="line col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+        <div class="social col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <ul class="socialList">
+            {{#if templateCnt.footer.fburl}}
+            <li>
+              <a target="_blank" href="{{templateCnt.footer.fburl}}">
+                <img src="/assets/img/fbIcon.png" alt="Facebook">
+              </a>
+            </li>
+            {{/if}}
+            {{#if templateCnt.footer.twurl}}
+            <li>
+              <a target="_blank" href="{{templateCnt.footer.twurl}}">
+                <img src="/assets/img/twitterIcon.png" alt="Twitter">
+              </a>
+            </li>
+            {{/if}}
+            {{#if templateCnt.footer.pinturl}}
+            <li>
+              <a target="_blank" href="{{templateCnt.footer.pinturl}}">
+                <img src="/assets/img/pinterestIcon.png" alt="Pinterest">
+              </a>
+            </li>
+            {{/if}}
+            {{#if templateCnt.footer.insturl}}
+            <li>
+              <a target="_blank" href="{{templateCnt.footer.insturl}}">
+                <img src="/assets/img/instagramIcon.png" alt="Instagram">
+              </a>
+            </li>
+            {{/if}}
+          </ul>
+        </div>
+        <div class="line col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+      </div>
+      <div class="row">
+        <div class="copy">
+          <p>© 2016 GINKO CONTROL - All rights reserved </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//liveperformancesales.com/api/?CI=157&amp;CC=ginko&amp;LC=pt&amp;FR=true&amp;final=false"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script>
+    function initMap() {
+        var mapDiv = document.getElementById('mapa');
+        if ($('#mapa').length > 0) {
+
+
+          var myLat = Number($('#mapCoordsLat').val());
+          var myLng = Number($('#mapCoordsLng').val());
+
+          //{lat: 38.7666666, lng: -9.104614};
+
+          var map = new google.maps.Map(mapDiv, {
+            center: {lat: myLat, lng: myLng},
+            zoom: 16
+          });
+
+          var marker = new google.maps.Marker({
+            position: {lat: myLat, lng: myLng},
+            map: map,
+            icon: '/assets/img/marker.png'
+          });
+        }
+    }
+
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+  <script src="/assets/js/cycle2.js"></script>
+  <script src="/assets/js/jquery.placeholder.min.js"></script>
+  <script src="/assets/js/jquery.backgroundSize.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
+{{/content}}

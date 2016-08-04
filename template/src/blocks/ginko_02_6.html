@@ -1,0 +1,132 @@
+<div class="preview">Text Image Text Block</div>
+<div class="frontend">
+    <div class="sectionWhite bgWhite">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 introArea">
+            <h2 class="lato-light uppercase">
+              {{{mainTitle}}}
+            </h2>
+            <div class="txtBLock">
+                <div class="introText lato-light">
+                    {{{introTxt}}}
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 txtBlock studyBlock">
+            <div class="lato-light">
+              <h4 class="lato-regular">{{blockTitle}}</h4>
+              <div class="firstP">
+
+                  {{{textFirstColumn}}}
+
+              </div>
+              <div class="stampImg">
+                <img src="{{unique_file_1}}">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-3 mobileImg">
+            <div class="bigMobile">
+              <img src="{{unique_file_2}}">
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 txtBlock lato-light studyBlock">
+              <div class="txtBlock">
+                  {{{textSecondColumn}}}
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="summary"></div>
+<div class="backend">
+    <div class="box box-element ui-draggable ng-scope lyrow">
+      <div class="row-fluid clearfix ng-scope">
+
+
+        <div class="col-md-12 column ui-sortable form-horizontal">
+
+            <h3>Page Title</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Page Title</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="mainTitle" value="{{mainTitle}}" />
+              </div>
+            </div>
+
+            <h3>Page Intro Text</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Page Intro Text</label>
+              <div class="col-sm-10">
+                <textarea data-tinymce type="textarea" class='form-control' name="introTxt" value="{{introTxt}}"></textarea>
+              </div>
+            </div>
+
+            <hr>
+
+            <h3>First Column Title</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Block Title</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="blockTitle" value="{{blockTitle}}" />
+              </div>
+            </div>
+
+            <h3>First Column Text</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">First Column Text</label>
+              <div class="col-sm-10">
+                <textarea data-tinymce type="textarea" class='form-control' name="textFirstColumn" value="{{textFirstColumn}}"></textarea>
+              </div>
+            </div>
+
+            <h3>First Column Image</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Image Upload</label>
+              <div class="col-sm-7">
+                <input name="{{unique_file_1}}" class="input-file filebutton" type="file">
+                <input data-id="{{unique_file_1}}" class="filebuttoncta btn" type="button" data-function="uploadImage" data-params="setData" value="Upload">
+              </div>
+              <div class="col-sm-3">
+                <input type="text" class='uploadPreview-src form-control' name="title" data-model="{{unique_file_1}}" value="{{unique_file_1.path}}" />
+                <div class="uploadPreview"></div>
+              </div>
+            </div>
+
+            <hr>
+
+            <h3>Central Image Upload</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Central Image Upload</label>
+              <div class="col-sm-7">
+                <input name="{{unique_file_2}}" class="input-file filebutton" type="file">
+                <input data-id="{{unique_file_2}}" class="filebuttoncta btn" type="button" data-function="uploadImage" data-params="setData" value="Upload">
+              </div>
+              <div class="col-sm-3">
+                <input type="text" class='uploadPreview-src form-control' name="title" data-model="{{unique_file_2}}" value="{{unique_file_2.path}}" />
+                <div class="uploadPreview"></div>
+              </div>
+            </div>
+
+            <hr>
+
+            <h3>Second Column Text</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Second Column Text</label>
+              <div class="col-sm-10">
+                <textarea data-tinymce type="textarea" class='form-control' name="textSecondColumn" value="{{textSecondColumn}}"></textarea>
+              </div>
+            </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+</div>

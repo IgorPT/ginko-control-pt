@@ -1,0 +1,38 @@
+<div ng-controller="editCtrl"><div ng-include="'/admin/views/headerCTypes-top.html'"></div>
+<div class="row">
+  <div style="display: block;" class="lyrow ui-draggable ele ele_1456312722373 col-md-9">
+
+
+    <div class="view">
+      <div class="row-fluid clearfix">
+        <div class="col-xs-12 column ui-sortable">
+          <div style="display: block;" class="box box-element ui-draggable ele ele_1456312734320">
+
+
+
+            <div class="view">
+              <label class="control-label">Icon</label>
+            </div>
+          </div>
+
+          <div style="display: block;" class="box box-element ui-draggable ele ele_1456312736635">
+
+
+            <div class="view">
+              <input class="form-control" ng-model="setData.content.icon" type="text">
+            </div>
+          </div>
+
+          <br>
+          <label class="control-label"><strong>Sub-menu</strong></label>
+          <br>
+          <input ng-model="setData.content.sub" type="radio" name="submenu" value="true" checked> True
+          <input ng-model="setData.content.sub" type="radio" name="submenu" value="false"> False
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3" ng-include="'/admin/views/headerCTypes.html'"></div>
+</div>
+</div>

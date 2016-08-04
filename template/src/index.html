@@ -1,0 +1,15 @@
+{{#extend "layout"}}
+    {{#content "nav"}}
+        <ul>
+            {{#each menu}}
+            <li>
+                <a href="{{path}}">{{name}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    {{/content}}
+
+    {{#content "users"}}
+        <div>This is the body for users!</div>
+    {{/content}}
+{{/extend}}

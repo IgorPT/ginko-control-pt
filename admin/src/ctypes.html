@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" ng-app="appCtrl">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>PerformanceSales - CMS</title>
+	<link rel="stylesheet" href="views/less/css/col.css">
+	<link rel="stylesheet" href="views/less/css/custom.css">
+	<link rel="stylesheet" href="views/less/css/growl.css">
+</head>
+<body>
+
+	<div ng-controller='templates'>
+	    <span>Please select a customer:</span>
+			<div ng-repeat="t in tempaltes">
+				<div data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{animate:true}">{{t.name}}</div>
+			</div>
+	</div>
+	<div ng-controller='layout'>
+	    <span>order elemsts:</span>
+			<div data-drop="true" data-jqyoui-option jqyoui-droppable style="border:1px solid #ddd; height:300px">
+				<div ng-repeat="e in elements">
+					<div>{{e.template}}</div>
+				</div>
+		</div>
+	</div>
+	<script src="bower_components/jquery/src/jquery.js"></script>
+	<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/angular-dragdrop/src/angular-dragdrop.js"></script>
+	<script type='text/javascript'>
+	'use strict';
+
+	var App = angular.module('appCtrl', ['ngDragDrop']);
+
+	App.controller('layout', function($scope, $http) {
+	  $http.get('layout.json')
+	       .then(function(res){
+					 $scope.elements = res.data.data;
+	        });
+	}).controller('templates', function($scope, $http) {
+		 $scope.selectedLements = [];
+
+		$http.get('templates.json')
+				 .then(function(res){
+					 $scope.tempaltes = res.data.data;
+					});
+	});
+
+
+	</script>
+</body>
+</html>

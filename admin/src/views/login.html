@@ -1,0 +1,50 @@
+<div class="row" ng-controller="userCtrl">
+    <h1 class="LoginText">Login</h1>
+    <div class="well clearfix">
+        <div>
+<!--             <form class="form-horizontal" name="userForm" novalidate>
+                <div class="row col-sm-12 form-group">
+                    <div class="col-sm-2">
+                        <label class="control-label">Email
+                            <span ng-show="userForm.email.$error.required" class="help-inline" style="color:red"> *</span>
+                        </label>
+                    </div>
+                    <div class="col-sm-4 customized-form-control">
+                        <input type="text" class="form-control" name="email" ng-model="user.email" required />
+                    </div>
+                </div>
+                <div class="row col-sm-12 form-group">
+                    <div class="col-sm-2 customized-form-control">
+                        <label class="control-label">Password
+                            <span ng-show="userForm.password.$error.required" class="help-inline" style="color:red"> *</span>
+                        </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" name="password" ng-model="user.password" required />
+                    </div>
+                </div>
+                <div class="row col-sm-8 col-sm-offset-3">
+                    <div class="form-button-group">
+                        <button class="btn btn-primary"  ng-click="login()">Login</button>
+                    </div>
+                </div>
+            </form> -->
+            <form role="form" name="userForm" novalidate>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" name="email" ng-model="user.email" style="width:100%;" required id="email">
+    <span ng-show="userForm.email.$error.required" class="help-inline" style="color:red"> *</span>
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" name="password" style="width:100%;" ng-model="user.password" required>
+    <span ng-show="userForm.password.$error.required" class="help-inline" style="color:red"> *</span>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-primary" ng-click="login()">Submit</button>
+</form>
+        </div>
+    </div>
+</div>

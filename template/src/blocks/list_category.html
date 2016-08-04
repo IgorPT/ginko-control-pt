@@ -1,0 +1,14 @@
+<div class="preview">Category</div>
+<div class="frontend">
+  <ul calss="ele">[[#each category]]<li><a href="{{link}}">[[item]]</a></li>[[/each]]</ul>
+</div>
+<div class="backend">
+    <h3>Configure Category view</h3>
+    <div>
+      <label>how many</label>
+      <input class="count cat" type="text" name="count" value="{{repeaters.category.count}}" placeholder="how many">
+      <label>which content types</label>
+      <input class="filter cat" type="text" name="filter" value="{{repeaters.category.contenTypes}}" placeholder="which content types">
+
+    </div>
+</div>

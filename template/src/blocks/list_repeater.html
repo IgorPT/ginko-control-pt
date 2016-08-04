@@ -1,0 +1,29 @@
+<div class="preview">Repeater Template</div>
+<!-- ['['gets replaced by handelbars for front-end alwways with item like item_name']'] do not use it in comments or it will break -->
+<div class="frontend">
+  [[#each repIt]]
+    [[#if oddeven]]
+      <div>[[item_name]]</div>
+      <div>[[item_link]]</div>
+    [[else]]
+      <div>[[item_link]]</div>
+      <div>[[item_name]]</div>
+    [[/if]]
+  [[/each]]
+</div>
+<div class="backend">
+    <div>
+      <label>Repeater Test</label>
+      <!-- data-id="{{repeatfront=repIt}}" data-repeat="itemloop in" tem que exitir -->
+      <li data-id="{{repeatfront=repIt}}" data-repeat="itemloop in">
+        <!-- data-model="itemloop.item_name" tem que exitir alwways with item like -->
+            <input type="text" name="name" data-model="itemloop.item_name"/>
+            <input type="text" name="link" data-model="itemloop.item_link"/>
+            <textarea data-tinymce data-model="itemloop.item_text"></textarea>
+            <a href="#" data-id="{{repeatfront=repIt}}" data-function="delThisEle" data-params="$index">X</a>
+            <!-- add more inputs if needed name is the smae as in front end-->
+      </li>
+      <!-- data-id="{{repeatfront=repIt}}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+      <button class="btn btn-primary navbar-btn" data-id="{{repeatfront=repIt}}" data-function="addanother" data-params="{item_name:'', item_link:''}">Add another</button>
+    </div>
+</div>

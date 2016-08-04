@@ -1,0 +1,23 @@
+{
+  "name": "NodeJs CMS",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "",
+  "license": "",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.2",
+    "angular-route": "~1.4.2",
+    "angular-sanitize": "^1.5.1",
+    "angular-resource": "~1.4.2",
+    "angular-ui-router": "~0.2.18",
+    "ng-table": "~1.0.0-beta.9",
+    "angular-ui-grid": "^3.1.1",
+    "jquery-ui": "^1.11.4",
+    "tinymce": "tinymce-dist#^4.3.8",
+    "angular-ui-tinymce": "latest"
+  },
+  "resolutions": {
+    "angular": "~1.4.2"
+  }
+}

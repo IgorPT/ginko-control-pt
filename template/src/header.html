@@ -1,0 +1,115 @@
+  {{#content "header"}}
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>{{templateCnt.seo.pagetitle}}</title>
+
+        <!--
+        <p>{{{seo.pagetitle}}}</p>
+        <p>{{{seo.keywords}}}</p>
+        <p>{{{seo.seotitle}}}</p>
+        <p>{{{seo.metatags}}}</p>
+        -->
+
+        <!-- Bootstrap -->
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/layout.css" rel="stylesheet">
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <link href="/assets/css/ie8.css" rel="stylesheet">
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+      </head>
+      <body class="{{homeClass}}">
+
+        <div class="header">
+            <div class="topHeader">
+              <div class="container">
+                <div class="row">
+                  <div class="logo col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                    <a href="/">
+                      <img class="logoDesktop" src="/assets/img/ginkoLogo.png" alt="ginko">
+                      <img class="logoMobile" src="/assets/img/Ginko_Logo_Quadri.jpg" alt="ginko">
+                    </a>
+                  </div>
+                  <div class="nav col-lg-9 col-md-9 col-sm-8 col-xs-6">
+                    <ul class="mainMenu lato-light">
+                      <li class="home">
+                        <a href="/"><img src="/assets/img/home.png" alt="home"></a>
+                      </li>
+                      {{#if menus}}
+                        {{#each menus}}
+                        <li>
+                          <a href="{{path}}">{{name}}</a>
+                        </li>
+                        {{/each}}
+                      {{/if}}
+                    </ul>
+
+                    <!--Mobile Menu-->
+                    <div class="mobileMenu lato-light">
+                          <div class="main-menu-mobile">
+                              <div class="menu-hamburguer">
+                                  <img src="/assets/img/hamburguer.png" alt="Ginko Menu">
+                              </div>
+                          </div>
+                          <div class="menu-hamburguer-expand">
+                              <div class="arrow-up"></div>
+                              <div class="menu-expand-block">
+                                <ul class="mobileMenuList lato-light">
+                                  <li class="home"><a href="/">Home</a></li>
+                                  {{#if menus}}
+                                    {{#each menus}}
+                                    <li>
+                                      <a href="{{path}}">{{name}}</a>
+                                    </li>
+                                    {{/each}}
+                                  {{/if}}
+                                </ul>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="slideshow">
+              <div class="headerSlide">
+                <div class="sliders">
+                    <div class="cycle-slideshow" style="width:100%">
+
+                      {{#if templateCnt}}
+                        {{#each templateCnt.repIt_headerGalery}}
+                        <div class="slide slideOne" style="background: url({{item_file}}) no-repeat top center transparent; background-size: cover;">
+                            <div class="bgOverlay"></div>
+                            <div class="container">
+                                <div class="contentArea">
+                                  {{{item_desc}}}
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                      {{/if}}
+                    </div>
+                    <div class="arrowCenter">
+                        <a href="#" class="prev"></a>
+                        <a href="#" class="next"></a>
+                    </div>
+                    <div class="pager">
+                      <div class="example-pager"></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  {{/content}}

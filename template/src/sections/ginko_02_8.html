@@ -1,0 +1,114 @@
+<div class="preview">Faqs Block</div>
+<div class="frontend">
+    <div class="sectionWhite bgWhite">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 introArea">
+            <h2 class="lato-light uppercase">
+              {{faqsTitle}}
+            </h2>
+            <div class="introText lato-light">
+              <p>
+                {{{faqsIntroText}}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+            <div class="faqsContainer">
+              [[#each repSeven]]
+                [[#if oddeven]]
+                <div class="faqGroup">
+                  <div class="faqQuestions bgLightGrey lato-regular">
+                    <p>[[item_question]]</p>
+                  </div>
+                  <div class="faqAnswer lato-light">
+                    <p>[[[item_answer]]]</p>
+                  </div>
+                </div>
+                [[else]]
+                <div class="faqGroup">
+                  <div class="faqQuestions bgWhite lato-regular">
+                    <p>[[item_question]]</p>
+                  </div>
+                  <div class="faqAnswer lato-light">
+                    <p>[[[item_answer]]]</p>
+                  </div>
+                </div>
+                [[/if]]
+              [[/each]]
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+</div>
+<div class="summary"></div>
+<div class="backend">
+    <div class="box box-element ui-draggable ng-scope lyrow">
+      <div class="row-fluid clearfix ng-scope">
+
+        <div class="col-md-12 column ui-sortable form-horizontal">
+            
+            <h3>FAQs Title</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">FAQs Title</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="faqsTitle" value="{{faqsTitle}}" />
+              </div>
+            </div>
+
+            <h3>FAQs Intro Text</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">FAQs Intro Text</label>
+              <div class="col-sm-10">
+                <textarea data-tinymce type="textarea" class='form-control' name="faqsIntroText" value="{{{faqsIntroText}}}"></textarea>
+              </div>
+            </div>
+
+
+        </div>
+
+          <!--Image Area Repeater Two-->
+          <!-- data-id="{{repeatfront=repSeven}}" data-repeat="itemloop in" tem que exitir -->
+          <div data-id="{{repeatfront=repSeven}}" data-repeat="itemloop in">
+            
+              <!-- add more inputs if needed name is the smae as in front end-->
+              <div class="clearfix">
+                <a class="btn btn-danger pull-right" href="#" data-id="{{repeatfront=repSeven}}" data-function="delThisEle" data-params="$index">X</a>
+              </div>
+
+              
+              <div class="form-group">
+                <h3>Faq Question</h3>
+                <label class="col-sm-2 control-label">Faq Question</label>
+                <div class="col-sm-10">
+                  <input type="text" name="question" data-model="itemloop.item_question"/>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <h3>Faq Answer</h3>
+                <label class="col-sm-2 control-label">Faq Answer</label>
+                <div class="col-sm-10">
+                  <textarea type="text" name="answer" data-model="itemloop.item_answer"></textarea>
+                </div>
+              </div>
+
+
+              <button class="btn btn-primary navbar-btn" data-id="{{repeatfront=repSeven}}" data-function="addanother" data-params="{item_answer:'', item_question:''}">Add another</button>
+
+          </div>
+        <!-- data-id="{{repeatfront=repTwo}}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+
+
+
+      </div>
+    </div>
+
+</div>

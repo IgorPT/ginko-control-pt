@@ -1,0 +1,199 @@
+{{#extend "layout"}}
+
+{{#content "contenttypes"}}
+
+<div class="clearfix" style="height:100%" ng-controller='layoutCtrl'>
+  <nav class="header clearfix">
+
+        <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#/contenttypes/add" class="navbar-brand ng-binding">Add new content type</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+
+        <li>
+          <div class="btn-group">
+            <button class="btn btn-default navbar-btn" href="#clear" id="clear" color="#333;">
+              <i class="fa icon-trash" style="color: #333;"></i>Clear
+            </button>
+            <button type="button" ng-class="{'active':activeslide === 'Preview'}" class="btn btn-default navbar-btn front" ng-click="preview()">
+              <i class="fa icon-eye" style="color: #333;"></i> Preview
+            </button>
+            <button type="button" class="btn btn-primary navbar-btn" ng-click="saveTemplate()">
+              <i class="fa icon-chevron-down" ></i>Save
+            </button>
+          </div>
+        </li>
+      </ul>
+
+</nav>
+
+
+
+
+
+  <div class="edit toolbox-reset">
+
+      <div class="container-fluid">
+
+          <div class="sidebar-nav col-md-2">
+
+            <div class="modal hide fade" role="dialog" id="editorModal">
+              <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3>Save your Layout</h3>
+              </div>
+              <div class="modal-body">
+                <p>
+                  <textarea id="contenteditor"></textarea>
+                </p>
+              </div>
+              <div class="modal-footer"> <a id="savecontent" class="btn btn-primary" data-dismiss="modal">Save</a> <a class="btn" data-dismiss="modal">Cancel</a> </div>
+            </div>
+
+
+            <ul class="nav nav-list accordion-group"  ng-repeat="(key, ct) in frontBlocks">
+                <li class="nav-header">
+                    <i class="icon-plus icon-white"></i> {[{key}]}
+                </li>
+
+                <li class="boxes" id="{[{key}]}">
+                  <div>
+                  <div class="box box-element ui-draggable lyrow" ng-class="{'lyrow' : key == 'grid'}" ng-repeat="ctele in ct">
+                    <div class="controls">
+                      <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+                      <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                      <span class="configuration"><button type="button" class="btn btn-mini" data-target="#editorModal" role="button" data-toggle="modal">Editor</button></span>
+                      <span class="drag label"><i class="icon-move"></i>Drag</span>
+                    </div>
+                    <div class="blockElement"  on-finish-render="ngRepeatFinished">
+
+                        <ng-include src="ctele.file"></ng-include>
+
+                    </div>
+                  </div>
+                </div>
+                </li>
+            </ul>
+            <ul class="nav nav-list accordion-group">
+                <li class="nav-header">
+                    <i class="icon-plus icon-white"></i> CTYPES
+                </li>
+
+                <li class="boxes" id="ctypeBase">
+                  <div class="box box-element ui-draggable" ng-repeat="ct in ctypeEle">
+                      <div class="controls">
+                        <a href="#hide" class="hide label label-important"><i class="icon-hide icon-white"></i>hide</a>
+                        <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                        <span class="drag label"><i class="icon-move"></i>Drag</span>
+                      </div>
+                      <div class="blockElement">
+
+
+                        <div class="preview">{[{ct.name}]}</div>
+                        <div class="frontend">
+
+                          <div class="handleCtypeRepeat" data-ctype="{[{ct.name}]}">
+                            handle {[{ct.name}]} Repeat
+                          </div>
+                        </div>
+                        <div class="summary">
+
+                          <div class="handleCtypeRepeat" data-ctype="{[{ct.name}]}">
+                            handle {[{ct.name}]} Repeat
+                          </div>
+                        </div>
+                        <div class="backend">
+                          <div class="handleCtypeRepeat" data-ctype="{[{ct.name}]}">
+                              <h3>Configure {[{ct.name}]} view</h3>
+                              <div>
+
+                                <input class="count fromHandel" type="text" name="count" value="[[repeaters.{[{ct.name}]}.count]]" placeholder="how many">
+                                <input class="category fromHandel" type="text" name="category" value="[[repeaters.{[{ct.name}]}.category]]" placeholder="which category">
+                                <input class="group fromHandel" type="text" name="group" value="[[repeaters.{[{ct.name}]}.group]]" placeholder="which group">
+
+
+
+
+                              </div>
+                              </div>
+                        </div>
+
+
+
+
+
+                      </div>
+
+                  </div>
+                </li>
+
+            </ul>
+
+          </div>
+
+      <div class="col-md-10">
+
+        <div class="generalType clearfix">
+
+        <label>Content Type Title</label>
+        <input name="title" class="textCT" type="text" ng-value="title" ng-model="title">
+        <label>Icon</label>
+        <input name="icon" class="iconCT" type="text" ng-value="icon" ng-model="icon">
+        <div class="col-xs-3" style="float:right;">
+
+          <label>Content Group</label><br>
+          <!--input type="text" name="groups" ng-model="groups" class="form-control" placeholder="group"-->
+          <select name="multipleSelectGroup" id='multipleSelectGroup' ng-model="groupsPick" ng-options="gp.name for gp in groups" multiple>
+              <option value="{[{gpP.name}]}" ng-repeat="gpP in groupsPick">{[{gpP.name}]}</option>
+          </select>
+        </div>
+
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <div class="btn-group" role="group">
+              <button type="button" ng-class="{'active':activeslide === 'Front End'}" class="btn btn-default navbar-btn front" ng-click="frontend()">
+                <i class="fa icon-eye-close" style="color: #333;"></i> Full view
+              </button>
+              <button type="button" ng-class="{'active':activeslide === 'Summary'}" class="btn btn-default navbar-btn sum"  ng-click="summaryend()" >
+                <i class="fa icon-eye-open" style="color: #333;"></i> Summary view
+              </button>
+              <button type="button" ng-class="{'active':activeslide === 'Back End'}" class="btn btn-default navbar-btn back"  ng-click="backend()">
+                <i class="fa fa-edit"></i> Administration
+              </button>
+            </div>
+          </li>
+        </ul>
+
+        </div>
+
+          <div class="changeDimension">
+                <div class="front-end ui-sortable dragplaceholder" ng-class="{'active':activeslide === 'Front End'}" ng-show="activeslide=='Front End'" style="min-height: 304px; ">
+                </div>
+
+                <div class="summary-end ui-sortable dragplaceholder" ng-class="{'active':activeslide === 'Summary'}" ng-show="activeslide=='Summary'" style="min-height: 304px; ">
+                </div>
+
+                <div class="back-end ui-sortable dragplaceholder" ng-class="{'active':activeslide === 'Back End'}" ng-show="activeslide=='Back End'" style="min-height: 304px; ">
+               </div>
+
+        </div>
+    </div>
+
+
+</div>
+<!--- CONTEN TYPE --->
+<script type="text/javascript" src="assets/js/jquery-ui.js"></script>
+
+<script src="assets/js/docs.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.htmlClean.js"></script>
+
+<!--- CONTEN TYPE --->
+{{/content}}
+{{/extend}}

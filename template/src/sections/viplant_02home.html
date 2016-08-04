@@ -1,0 +1,127 @@
+<div class="preview">Home Content</div>
+<div class="frontend">
+    <div class="sectionWhite">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 introArea">
+              <h2 class="green uppercase m300">{{mainTitle}}</h2>
+              <p class="blue m300">
+                  {{{shortText}}}
+              </p>
+            </div>
+            [[#each repIt]]
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <div class="moduleImgTxt">
+                <div class="imgArea">
+                  <img src="[[item_file]]">
+                  <div class="imgDescription">
+                    <a href="[[item_link]]">
+                      <img src="[[item_file]]" alt="[[item_descr]]">
+                      <p class="m500 uppercase">[[item_descr]]</p>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="txtArea">
+                  <h3 class="green uppercase m500">[[item_subTitle]]</h3>
+                  <p class="blue m300">
+                  [[[item_ctDescr]]]
+                  </p>
+                  <a href="[[item_link]]">[[item_cta]]</a>
+                </div>
+              </div>
+            </div>
+            [[/each]]
+          </div>
+        </div>
+
+        <span class="caret"></span>
+    </div>
+</div>
+<div class="summary"></div>
+<div class="backend">
+      <div class="box box-element ui-draggable ng-scope lyrow">
+        <div class="row-fluid clearfix ng-scope">
+
+          <div class="col-md-12 column ui-sortable form-horizontal">
+              <h3>Intro Area</h3>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Page Title</label>
+                <div class="col-sm-10">
+                  <input type="text" class='form-control' name="mainTitle" value="{{mainTitle}}" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Short Text</label>
+                <div class="col-sm-10">
+                  <textarea data-tinymce type="textarea" class='form-control' name="shortText" value="{{shortText}}"></textarea>
+                </div>
+              </div>
+          </div>
+
+          <!-- data-id="{{repeatfront=repIt}}" data-repeat="itemloop in" tem que exitir -->
+          <div class="col-md-12 column ui-sortable form-horizontal">
+            <h3>Home Content</h3>
+            <div data-id="{{repeatfront=repIt}}" data-repeat="itemloop in">
+              <!-- add more inputs if needed name is the smae as in front end-->
+              <div class="clearfix">
+                <a class="btn btn-danger pull-right" href="#" data-id="{{repeatfront=repIt}}" data-function="delThisEle" data-params="$index">X</a>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Image</label>
+                <div class="col-sm-7">
+                  <input data-model="itemloop.item_file" name="{{file}}" class="input-file filebutton" type="file">
+                  <input data-id="{{repeatfront=repIt}}" class="filebuttoncta btn" type="button" data-function="uploadImage" data-params="{index: $index, key: 'item_file'}" value="Upload">
+                </div>
+                <div class="col-sm-3">
+                  <input data-model="itemloop.item_file" type="text" class='uploadPreview-src form-control' name="title" />
+                  <div class="uploadPreview"></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Image Text</label>
+                <div class="col-sm-10">
+                  <input type="text" name="name" data-model="itemloop.item_descr" class='form-control'/>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Block Title</label>
+                <div class="col-sm-10">
+                  <input type="text" name="name" data-model="itemloop.item_subTitle" class='form-control'/>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Block Description</label>
+                <div class="col-sm-10">
+                  <textarea data-tinymce data-model="itemloop.item_ctDescr" class='form-control' name="item_ctDescr"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Button Text</label>
+                <div class="col-sm-10">
+                  <input type="text" data-model="itemloop.item_cta" class='form-control' />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Button URL</label>
+                <div class="col-sm-10">
+                  <input type="text" data-model="itemloop.item_link" class='form-control' />
+                </div>
+              </div>
+            </div>
+
+              <!-- data-id="{{repeatfront=repIt}}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+              <div class="col-md-12">
+                <button class="btn btn-primary navbar-btn" data-id="{{repeatfront=repIt}}" data-function="addanother" data-params="{item_ctDescr:'', item_subTitle:'', item_descr:'', item_cta:'', item_link: '', item_file: ''}">Add another</button>
+              </div>
+            </div>
+        </div>
+      </div>
+</div>

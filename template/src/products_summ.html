@@ -1,0 +1,37 @@
+<div class="frameprods">
+    <script type="text/javascript">
+        if(typeof info !== 'undefined') {
+            $(".imgproduct").remove();
+            var newImg = '<img width="241" height="161" class="imgproduct" src="../../assets/img/products/' + info.name.trim() + '.jpg"/><br/><br/>';
+            $('body .frameprods').prepend(newImg);
+
+            if (info.u_promo && info.iva4incl) {
+                $(".priceprod").text('Preço: ' + info.epv4);
+            } else if (!info.u_promo && info.iva3incl) {
+                $(".priceprod").text('Preço: ' + info.epv3);
+            } else if (info.u_promo && !info.iva4incl) {
+                $(".priceprod").text('Preço: ' + (info.epv4 * 1.23).toFixed(2));
+            } else {
+                $(".priceprod").text('Preço: ' + (info.epv3 * 1.23).toFixed(2));
+            }
+
+            var sel = $('<select class="stockprods">').appendTo('body .frameprods');
+            $(items).each(function () {
+                sel.append($("<option>").attr('value', this.val.tam).text(this.text));
+            });
+
+            $(".stockprods").on("change", function () {
+                $(".stocktam").text('Stock: ' + $(this).text());
+            });
+        }
+    </script>
+    <img width="241" height="161" class="imgproduct" src=""/><br/><br/>
+    <ul>
+        <li>Design: {{info.design}}</li>
+        <li>Familia: {{info.faminome}}</li>
+        <li>Genero: {{info.usr6}}</li>
+        <li class="priceprod"></li>
+        <li class="stocktam"></li>
+    </ul>
+    <label>Tamanho</label>
+</div>

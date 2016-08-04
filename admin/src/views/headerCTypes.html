@@ -1,0 +1,47 @@
+<div class="topScroll">
+  <div class="topScrollInner"></div>
+</div>
+
+<div class="row-fluid clearfix panel-pageconfig">
+  <div class="col-md-12 column">
+
+    <div class="row-fluid clearfix box box-element">
+      <h4>Page Configuration</h4>
+      <div class="row">
+        <div class="col-md-12">
+          <label>Content name</label>
+          <input type="text" name="name" class="form-control" ng-model="name" ng-change="changedName(name)" placeholder="internal name">
+          <br>
+          <label style="display:block">Content Permalink</label>
+          <div class="input-btn-combo clearfix">
+            <input type="text" name="permalink" class="form-control" ng-model="permalink" ng-change="changedPermalink(permalink)" placeholder="permalink">
+            <a ng-href="{[{permalink}]}" target="_blank" class="btn btn-primary navbar-btn"><i class="fa fa-eye" ></i></a>
+          </div>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Content Categories</label><br>
+          <select name="multipleSelectCategory" id='multipleSelectCategory' ng-model="categoryPick" ng-options="ct.name for ct in category" multiple>
+            <option value="{[{ct.slug}]}" ng-repeat="ct in categoryPick">{[{ct.name}]}</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label>Content Group</label><br>
+          <!--input type="text" name="groups" ng-model="groups" class="form-control" placeholder="group"-->
+          <select name="multipleSelectGroup" id='multipleSelectGroup' ng-model="groupsPick" ng-options="gp.name for gp in groups" multiple>
+            <option value="{[{gpP.name}]}" ng-repeat="gpP in groupsPick">{[{gpP.name}]}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-fluid clearfix box box-element" ng-show="title!='groups/add' && title!='users/add' && title!='menus/add' && title!='menus/edit'">
+      <div ng-include="'/admin/template/header/header.html'"></div>
+      <div ng-include="'/admin/template/sidebar/sidebar.html'"></div>
+      <div ng-include="'/admin/template/footer/footer.html'"></div>
+    </div>
+
+  </div>
+</div>

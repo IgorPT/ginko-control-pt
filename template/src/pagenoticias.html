@@ -1,0 +1,83 @@
+
+                
+                    
+                    
+    <div class="sectionWhite bgWhite">
+      <div class="container">
+      {{#each repFive_1466003707621}}
+        <div class="newsSection">
+          <div class="row">
+            <div class="newsImg col-lg-2 col-md-2 col-sm-3 col-xs-12">
+              <img src="{{item_newsImg}}">
+            </div>
+            <div class="newsDescription col-lg-10 col-md-10 col-sm-9 col-xs-12">
+              <h4 class="lato-regular">{{item_newsTitle}}</h4>
+              <div class="newsTxtBlock lato-light">
+
+                   {{{item_newsTxt}}}
+
+              </div>
+              <div class="fullArticle lato-regular">
+                <a class="btnReadMore uppercase" href="{{item_newsLink}}" target="_blank">{{item_fullArticle}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+      </div>
+    </div>
+
+                  
+                    
+                    
+  <div class="sectionGrey">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="introHome">
+              <h2 class="uppercase lato-light">{{{introTitle_1466003709959}}}<br>{{{introSecondLineTitle_1466003709959}}}</h2>
+            </div>
+          </div>
+            <div class="product-slideshow">
+              {{#each repOne_1466003709959}}
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="blockOfThree">
+                  <div class="imgBlockThree relative">
+                    <img src="{{item_threeBlockImg}}">
+                    <div class="imgDescription uppercase lato-regular">{{item_imgTitle}}</div>
+                  </div>
+                  <div class="txtBlockThree lato-regular">
+                    <p>
+                      {{{item_txtThreeBlock}}}
+                    </p>
+                  </div>
+                  {{#if item_seeMoreLink}}
+<div class="btnBlockThree lato-bold">
+                    <a class="btnMais uppercase" href="{{item_seeMoreLink}}">{{item_seeMoreBtn}}</a>
+                  </div>
+{{/if}}
+                </div>
+              </div>
+              {{/each}}
+            </div>
+            <div class="arrowCenter greyArrow">
+              <a href="#" class="prev"></a> 
+              <a href="#" class="next"></a>
+          </div>
+          <div class="pagerProduct">
+            <div class="product-pager"></div>
+          </div>
+
+        </div>
+        {{#if genBtnUrl_1466003709959}}
+<div class="row btnVerGeral">
+            <a class="btnMais uppercase btnVerGeral" href="{{genBtnUrl_1466003709959}}">{{genBtnTxt_1466003709959}}</a>
+        </div>
+{{/if}}
+      </div>
+    </div>
+
+
+
+                  

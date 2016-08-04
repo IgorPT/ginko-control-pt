@@ -1,0 +1,129 @@
+
+                    
+                    
+
+
+      <div class="sectionProdutos">
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 productBlock">
+                <div class="row">
+          {{#each repEight_1464111594929}}
+              <div class="{{item_type}} col-sm-12 col-xs-12 productDetail bgWhite">
+                <div class="row">
+                  <div class="productImg col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <img src="{{item_productImg}}">
+                  </div>
+                  <div class="productTxt col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <div class="productHeader clearfix">
+                      <div class="productTitle">
+                        <h2 class="lato-light">{{{item_productTitle}}}</h2>
+                        {{{item_productHeader}}}
+                      </div>
+                    </div>
+                    <div class="productDescription">
+                        {{{item_productDescription}}}
+                    </div>
+                    <div class="buy">
+                      <a class="btnBuy uppercase lato-bold callLb-{{@index}}" href="#">{{item_seeMore}}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          {{/each}}
+      </div>
+            </div>
+          <div class="formContent col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="formBlock">
+                <div class="form_box">
+                  <div class="close"></div>
+                  <div class="form-header uppercase lato-light">
+                    <img src="/assets/img/buyLogo.png">
+                    <span class="lato-bold">formulário</span> contacto
+                  </div>
+                  <div id="formulario">
+                    <div class="frmBody">
+                      <div class="loading"></div>
+
+                      <div class="obrigado">
+                      <br><br>
+                      <h4 style="font-size:31px;">Obrigado pelo seu contacto</h4>
+                      <br><br>
+                      </div>
+
+                      <div class="form">
+                          <div class="content_input">
+                          <input class="caixas check nome" name="nome" autocomplete="on" id="nome" placeholder="Nome Completo" type="text">
+                            <div class="error">Por favor preencha o seu nome</div>
+                          </div>
+                          <div class="content_input">
+                          <input id="email" name="name" autocomplete="on" class="caixas check email" placeholder="Email" type="text">
+                            <div class="error">Por favor preencha o seu email</div>
+                          </div>
+                          <div class="content_input">
+                            <textarea id="aditional" name="aditional" class="caixas check aditional" placeholder="Mensagem" rows="4" cols="50"></textarea>
+                            <div class="error">Por favor escreva a mensagem</div>
+                          </div>
+                            <a class="btnEnviar enviar lato-bold uppercase" href="#">Enviar</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+  <div class="imgRadiation">
+              <img src="/assets/img/radiacao.png">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="sectionLightBox">
+      {{#each repEight_1464111594929}}
+        <div class="productInfo callLb-{{@index}}">
+            <div class="row">
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 lightBoxImg">
+                  <img class="imgProduct" src="{{item_productImg}}">
+              </div>
+
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 lightBoxTxt">
+                <div class="productTitle">
+                    <h2 class="lato-light">{{{item_productTitle}}}</h2>
+                    {{{item_productHeader}}}
+                </div>
+                <div class="productDescription">
+                    {{{item_productDescription}}}
+                </div>
+              </div>
+
+              <div class="col-xs-12 mobileLightBox">
+                <div class="mobileProductDescription">
+                    {{{item_productDescription}}}
+                </div>
+              </div>
+            </div>
+
+            <div class="closeLightBox"></div>
+        </div>
+      {{/each}}
+    </div>
+
+
+
+                  
+                    
+                    
+    <div class="sectionAplicar" style="background-image: url({{unique_file_1464111599370}});">
+        <div class="container">
+
+            <h2 class="uppercase lato-regular">{{mainTitle_1464111599370}}</h2>
+
+            <div class="aplicDescription lato-regular">{{{descriptionArea_1464111599370}}}</div>
+        </div>
+    </div>
+
+
+                  

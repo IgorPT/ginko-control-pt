@@ -1,0 +1,84 @@
+<div ng-controller="editCtrl">
+  <div ng-include="'/admin/views/headerCTypes-top.html'"></div>
+  <div class="row">
+    <div style="display: block;" class="box box-element ui-draggable ng-scope lyrow ele ele_1458149227279 col-md-9">
+
+      <div class="view" on-finish-render="ngRepeatFinished">
+
+        <!-- ngInclude: undefined -->
+        <div class="row-fluid clearfix ng-scope">
+          <div class="col-md-12 column ui-sortable">
+            <div style="display: block;" class="box box-element ui-draggable ng-scope ele ele_1458149232526">
+
+              <div class="view" on-finish-render="ngRepeatFinished">
+
+                <!-- ngInclude: undefined -->
+                <label class="control-label ng-scope" contenteditable="false">Name</label>
+
+
+              </div>
+            </div>
+            <div style="display: block;" class="box box-element ui-draggable ng-scope ele ele_1458149236128">
+
+              <div class="view" on-finish-render="ngRepeatFinished">
+
+                <!-- ngInclude: undefined -->
+                <input ng-model="setData.name" value="{[{input_1458149236128}]}" class="form-control ng-scope" type="text">
+
+
+              </div>
+            </div>
+            <div style="display: block;" class="box box-element ui-draggable ng-scope ele ele_1458149237805">
+
+              <div class="view" on-finish-render="ngRepeatFinished">
+
+                <!-- ngInclude: undefined -->
+                <label class="control-label ng-scope" contenteditable="false">Login</label>
+
+
+              </div>
+            </div>
+            <div style="display: block;" class="box box-element ui-draggable ng-scope ele ele_1458149240645">
+
+              <div class="view" on-finish-render="ngRepeatFinished">
+
+                <!-- ngInclude: undefined -->
+                <label class="radio-inline ng-scope" for="radios-0">
+                  <input ng-model="setData.login" name="radios" id="radios-0" value="true" checked="checked" type="radio"> True
+                </label>
+                <label class="radio-inline ng-scope" for="radios-1">
+                  <input ng-model="setData.login" name="radios" id="radios-1" value="false" type="radio"> False
+                </label>
+
+
+              </div>
+            </div>
+            <div style="display: block;" class="box box-element ui-draggable ng-scope ele ele_1458149243246">
+
+              <div class="view" on-finish-render="ngRepeatFinished">
+
+                <!-- ngInclude: undefined -->
+                <label class="control-label ng-scope" contenteditable="false">Paths</label>
+
+
+              </div>
+            </div>
+            <div style="display: block;" class="box box-element ui-draggable ng-scope ele ele_1458149245765">
+
+              <div class="view" on-finish-render="ngRepeatFinished">
+
+                <!-- ngInclude: undefined -->
+                <textarea ng-model="setData.paths" class="form-control ng-scope">{[{textarea_1458149245765}]}</textarea>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="col-md-3" ng-include="'/admin/views/headerCTypes.html'"></div>
+  </div>
+</div>

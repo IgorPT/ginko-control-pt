@@ -1,0 +1,105 @@
+<div class="preview">Section Contactos</div>
+<div class="frontend">
+    <div class="sectionContacts">
+        <div class="bgOverlay"></div>
+        <div class="container">
+          <div class="row">
+            <h2 class="green uppercase m300">{{mainTitle}}</h2>
+                [[#each repIt]]
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="contactViveiros">
+                        <div class="row">
+                          <div class="col-md-8 col-sm-12 col-xs-12">
+                            <h4 class="green m700 uppercase">[[item_title]]</h4>
+                            <p class="m300">
+                              [[[item_addr1]]]
+                            </p>
+                            <ul class="m300 contactDetails">
+                              <li class="tel">[[item_tel]]</li>
+                              <li class="email">[[item_email]]</li>
+                            </ul>
+                          </div>
+                          <div class="col-md-4 col-sm-12 col-xs-12">
+                            <a href="[[item_link]]" class="mapa m300">[[item_cta]]</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                [[/each]]
+
+          </div>
+        </div>
+    </div>
+</div>
+<div class="summary"></div>
+<div class="backend">
+
+  <div class="box box-element ui-draggable ng-scope lyrow">
+    <div class="row-fluid clearfix ng-scope">
+      <div class="col-md-12 column ui-sortable form-horizontal">
+        <h3>Contact Area</h3>
+
+         <div class="form-group">
+           <label class="col-sm-2 control-label">Main Title</label>
+           <div class="col-sm-10">
+             <input type="text" name="mainTitle" class='form-control' value="{{mainTitle}}"/>
+           </div>
+         </div>
+
+      <h3>Contact Details</h3>
+      <div data-id="{{repeatfront=repIt}}" data-repeat="itemloop in">
+
+          <!-- add more inputs if needed name is the smae as in front end-->
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+              <input type="text" name="name" data-model="itemloop.item_title" class='form-control'/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Address</label>
+            <div class="col-sm-10">
+              <textarea data-tinymce data-model="itemloop.item_addr" class='form-control'></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Telephone</label>
+            <div class="col-sm-10">
+              <input type="text" name="telephone" data-model="itemloop.item_tel" class='form-control'/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="text" name="telephone" data-model="itemloop.item_email" class='form-control'/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Button Text</label>
+            <div class="col-sm-10">
+              <input type="text" data-model="itemloop.item_cta" class='form-control' />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Button URL</label>
+            <div class="col-sm-10">
+              <input type="text" data-model="itemloop.item_link" class='form-control' />
+            </div>
+          </div>
+
+      </div>
+      <!-- data-id="{{repeatfront=repIt}}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+      <div class="col-md-12">
+        <button class="btn btn-primary navbar-btn" data-id="{{repeatfront=repIt}}" data-function="addanother" data-params="{item_title:'', item_desc:'', item_cta:'', item_link: '', item_file: ''}">Add another</button>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+</div>

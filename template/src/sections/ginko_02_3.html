@@ -1,0 +1,57 @@
+<div class="preview">Aplicar Section</div>
+<div class="frontend">
+    <div class="sectionAplicar" sytle="background-image:{{backgroundImage}}">
+        <div class="container">
+     
+            <h2 class="uppercase lato-regular">{{mainTitle}}</h2>
+         
+            <div class="aplicDescription lato-regular">{{{descriptionArea}}}</div>
+        </div>
+    </div>
+
+</div>
+<div class="summary"></div>
+<div class="backend">
+    <div class="box box-element ui-draggable ng-scope lyrow">
+      <div class="row-fluid clearfix ng-scope">
+
+        <div class="col-md-12 column ui-sortable form-horizontal">
+            <h3>Main Title - Aplicar Section</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Main Title</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="mainTitle" value="{{mainTitle}}" />
+              </div>
+            </div>
+
+            <!--Image Area-->
+
+            <h3>Background Image Upload</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Background Image</label>
+              <div class="col-sm-7">
+                <input name="{{backgroundImage}}" class="input-file filebutton" type="file">
+                <input class="filebuttoncta" type="button" ng-click="uploadImage()" value="Upload">
+              </div>
+              <div class="col-sm-3">
+                <input type="text" class='uploadPreview-src' name="title" value="{{backgroundImage.path}}"  />
+                <div class="uploadPreview"></div>
+              </div>
+            </div>
+          
+
+            <h3>Description Area</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Description Area</label>
+              <div class="col-sm-10">
+                <textarea data-tinymce type="textarea" class='form-control' name="descriptionArea" value="{{{descriptionArea}}}"></textarea>
+              </div>
+            </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+</div>

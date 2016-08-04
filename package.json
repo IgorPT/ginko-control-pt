@@ -1,0 +1,43 @@
+{
+  "name": "nodejs_cms",
+  "description": "Hapijs CMS",
+  "version": "0.1.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=0.10.22"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "boom": "^2.6.1",
+    "braintree": "1.36.0",
+    "card-validator": "2.2.7",
+    "fs-extra": "^0.26.5",
+    "glob": "^7.0.3",
+    "handlebars": "^4.0.5",
+    "handlebars-layouts": "^3.1.3",
+    "hapi": "^8.2.0",
+    "joi": "^5.1.0",
+    "mongoose": "3.8.23",
+    "multiparty": "^4.1.2",
+    "q": "^1.4.1",
+    "request": "^2.69.0",
+    "tingodb": "^0.4.2",
+    "tungus": "0.0.5",
+    "yar": "^3.0.3"
+  },
+  "keywords": [
+    "node.js",
+    "hapi.js",
+    "mongoose",
+    "angular"
+  ],
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "devDependencies": {
+    "hapi": "^8.8.1",
+    "joi": "^5.1.0",
+    "lab": "^10.3.1"
+  }
+}

@@ -1,0 +1,101 @@
+<div class="preview">Aplicar Details</div>
+<div class="frontend">
+    <div class="sectionWhite bgWhite">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+            <div class="txtBlock">
+              <h2 class="lato-regular uppercase">{{aplicarTitle}}</h2>
+              <div class="lato-light">
+                  {{{aplicarTxt}}}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+            <div class="demoBlock">
+              <div class="row">
+                <ul class="demoList">
+                  [[#each repThree]]
+                  <li class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                    <img class="demoImg" src="[[item_demoImg]]">
+                    <div class="lato-regular demoTxt">
+                      
+                        [[[item_demoDetails]]]
+                      
+                    </div>
+                  </li>
+                  [[/each]]
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="summary"></div>
+<div class="backend">
+    <div class="box box-element ui-draggable ng-scope lyrow">
+      <div class="row-fluid clearfix ng-scope">
+
+        <div class="col-md-12 column ui-sortable form-horizontal">
+            <h3>Main Title - Aplicar</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Section Title</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="aplicarTitle" value="{{aplicarTitle}}" />
+              </div>
+            </div>
+
+            <h3>Aplicar Txt</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Aplicar Text</label>
+              <div class="col-sm-10">
+                <textarea data-tinymce type="textarea" class='form-control' name="aplicarTxt" value="{{aplicarTxt}}"></textarea>
+              </div>
+            </div>
+
+
+
+          <!--Image Area Repeater Three-->
+          <!-- data-id="{{repeatfront=repThree}}" data-repeat="itemloop in" tem que exitir -->
+
+          <h3>Demo List</h3>
+          <div data-id="{{repeatfront=repThree}}" data-repeat="itemloop in">
+
+              <!-- add more inputs if needed name is the smae as in front end-->
+              <div class="clearfix">
+                <a class="btn btn-danger pull-right" href="#" data-id="{{repeatfront=repThree}}" data-function="delThisEle" data-params="$index">X</a>
+              </div>
+
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Demo Image Upload</label>
+                  <div class="col-sm-7">
+                    <input data-model="itemloop.item_demoImg" name="{{item_demoImg}}" class="input-file filebutton" type="file">
+                    <input data-id="{{repeatfront=repThree}}" class="filebuttoncta btn" type="button" data-function="uploadImage" data-params="itemloop, 'item_demoImg'" value="Upload">
+                  </div>
+                  <div class="col-sm-3">
+                    <input data-model="itemloop.item_demoImg" type="text" class='uploadPreview-src form-control' name="title" />
+                    <div class="uploadPreview"></div>
+                  </div>
+                </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Demo Details</label>
+                <div class="col-sm-10">
+                  <textarea data-tinymce type="textarea" class='form-control' name="demoDetails" data-model="itemloop.item_demoDetails"></textarea>
+                </div>
+              </div>
+
+            </div>
+            <!-- data-id="{{repeatfront=repThree}}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+            <!-- data-id="{{repeatfront=repThree}}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+            <button class="btn btn-primary navbar-btn" data-id="{{repeatfront=repThree}}" data-function="addanother" data-params="{item_demoImg:'', item_demoDetails:''}">Add another</button>
+
+
+        </div>
+
+      </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="preview">Text Image Block</div>
+<div class="frontend">
+    <div class="sectionGrey morePadding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="txtBlockSecond">
+              <h3 class="lato-regular">{{sectionTitle}}</h3>
+              <div class="txtBlock">
+                  <div class="lato-light">
+                      {{{leftTxt}}}
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="imgBlock">
+              <img src="{{unique_file_3}}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="summary"></div>
+<div class="backend">
+    <div class="box box-element ui-draggable ng-scope lyrow">
+      <div class="row-fluid clearfix ng-scope">
+
+
+        <div class="col-md-12 column ui-sortable form-horizontal">
+
+            <h3>Section Title</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Section Title</label>
+              <div class="col-sm-10">
+                <input type="text" class='form-control' name="blockTitle" value="{{sectionTitle}}" />
+              </div>
+            </div>
+
+            <h3>Left Text</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Left Text</label>
+              <div class="col-sm-10">
+                <textarea data-tinymce type="textarea" class='form-control' name="leftTxt" value="{{leftTxt}}"></textarea>
+              </div>
+            </div>
+
+            <h3>Right Image</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Right Image Upload</label>
+              <div class="col-sm-7">
+                <input name="{{unique_file_3}}" class="input-file filebutton" type="file">
+                <input data-id="{{unique_file_3}}" class="filebuttoncta btn" type="button" data-function="uploadImage" data-params="setData" value="Upload">
+              </div>
+              <div class="col-sm-3">
+                <input type="text" class='uploadPreview-src form-control' name="title" data-model="{{unique_file_3}}" value="{{unique_file_3.path}}" />
+                <div class="uploadPreview"></div>
+              </div>
+            </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+</div>

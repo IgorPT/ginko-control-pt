@@ -1,0 +1,15 @@
+.content_input{
+	height:57px;
+}
+.content_input input{
+	height: 34px;
+}
+.sectionAplicar {
+    min-height: 450px;
+}
+.contentTextarea{
+	height: 130px;
+}
+.contentTextarea textarea{
+	height: 100px;
+}

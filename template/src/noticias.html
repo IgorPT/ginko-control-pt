@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ginko</title>
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/layout.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+
+    <!--<div class="form_box">
+      <div class="close"></div>
+          <div class="form-header hNormal">CONTACTE-NOS!</div>
+          <div class="form-header hPromo">PROMO&Ccedil;&Otilde;ES DISPON&Iacute;VEIS NO NOSSO <br>GARDEN CENTER. CONTACTE-NOS!</div>
+          <div id="formulario">
+            <div class="frmBody">
+              <div class="loading"></div>
+
+              <div class="obrigado">
+              <br><br>
+              <h4 style="font-size:31px;">Obrigado pelo seu contacto</h4>
+              <br><br>
+              </div>
+
+              <div class="form">
+                  <div class="content_input">
+                  <input class="caixas check nome" name="nome" autocomplete="on" type="text" id="nome" placeholder="Nome e Apelido">
+                    <div class="error">Por favor preencha o seu nome</div>
+                  </div>
+                  <div class="content_input">
+                  <input type="text" id="email" name="name" autocomplete="on" class="caixas check email" placeholder="Email">
+                    <div class="error">Por favor preencha o seu email</div>
+                  </div>
+                  <div class="content_input">
+                  <input type="text" id="contacto" name="contacto" autocomplete="on" class="caixas check contacto" maxlength="9" placeholder="Telefone">
+                    <div class="error">Por favor preencha o seu Telefone</div>
+                  </div>
+                <div class="content_input">
+                    <textarea id="aditional" name="aditional" class="caixas check aditional" placeholder="Mensagem" rows="4" cols="50"></textarea>
+                    <div class="error">Por favor escreva a mensagem</div>
+                </div>
+                <input type="hidden" id="job" value="a" name="job" class="caixas job">
+
+                <p><a class="btnVerde enviar" href="#">Enviar pedido de contacto</a></p>
+              </div>
+                </div>
+            </div>
+    </div>-->
+
+    <!--Header-->
+    <div class="header">
+      <div class="topHeader bgWhite">
+        <div class="container">
+          <div class="row">
+            <div class="logo col-lg-3 col-md-3 col-sm-4 col-xs-6">
+              <a href="#">
+                <img src="assets/img/logoGinko.png" alt="ginko">
+              </a>
+            </div>
+            <div class="nav col-lg-7 col-md-7">
+              <ul class="mainMenu lato-light">
+                <li class="home">
+                  <a href=""><img src="assets/img/home.png" alt="home"></a>
+                </li>
+                <li class="aplicar"><a>Como Aplicar</a></li>
+                <li class="estudos"><a>Estudos Científicos</a></li>
+                <li class="noticias"><a>Notícias</a></li>
+                <li class="contactos"><a>Contactos</a></li>
+                <li class="faqs"><a>FAQ</a></li>
+              </ul>
+
+              <!--Mobile Menu-->
+              <ul class="mobileMenu lato-light">
+                <li class="home">
+                  <img src="assets/img/home.png" alt="home">
+                </li>
+                <li class="aplicar">Como Aplicar</li>
+                <li class="estudos">Estudos Científicos</li>
+                <li class="noticias">Notícias</li>
+                <li class="contactos">Contactos</li>
+                <li class="faqs">FAQ</li>
+              </ul>
+            </div>
+            <div class="cart col-lg-2 col-md-2">
+              <ul class="cartList">
+                <li class="cartImg">
+                  <img src="assets/img/cart.png" alt="carrinho">
+                </li>
+                <li class="cartTxt">Carrinho</li>
+                <li class="cartNumber">(0)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slideshow">
+        <div class="headerSlide">
+          <div class="sliders">
+              <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div" data-cycle-pager=".example-pager" style="width:100%"  data-cycle-prev="#prev" data-cycle-next="#next">
+                  
+                  <!--Slide One-->
+
+                  <div class="slide slideOne">
+                      <div class="bgOverlay"></div>
+                      <div class="container">
+                          <div class="contentArea">
+                              <h1 class="uppercase lato-regular wow animated flipInX">a tecnologia ginko é patenteada e certificada</h1>
+                          </div>
+                      </div>
+
+                  </div>
+                  <!--Slide Two-->
+                  <div class="slide slideTwo">
+                      <!--Home Slider Content-->
+                      <div class="container">
+                          <div class="contentArea">
+                              <h1 class="uppercase lato-regular wow animated flipInX">cor e vida</h1>
+                          </div>
+                      </div>
+                  </div>
+                  <!--Slide Three-->
+                  <div class="slide slideThree">
+                      <!--Home Slider Content-->
+                      <div class="container">
+                          <div class="contentArea">
+                              <h1 class="uppercase lato-regular wow animated flipInX">cor e vida</h1>
+                          </div>
+                      </div>
+                  </div> 
+              </div>
+              <div class="arrowCenter">
+                  <a href="#" class="prev"></a> 
+                  <a href="#" class="next"></a>
+              </div>
+              <div class="pager">
+                <div class="example-pager"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Noticias-->
+
+    <div class="sectionWhite bgWhite">
+      <div class="container">
+
+        <div class="newsSection">
+          <div class="row">
+            <div class="newsImg col-lg-2 col-md-2 col-sm-3 col-xs-12">
+              <img src="assets/img/newsOne.png">
+            </div>
+            <div class="newsDescription col-lg-10 col-md-10 col-sm-9 col-xs-12">
+              <h4 class="lato-regular">WIFI: De onde partem as radiações. Elas andam aí e dizem que nos fazem mal</h4>
+              <div class="newsTxtBlock lato-light">
+                <p>
+                  <span class="highlight subTitle lato-regular">REVISTA VISÃO</span> A rede WIFI está sob suspeita. Nada se se vê, nada se cheira, nada se sente, e no entanto a radiação eletromagnética anda por aí a assustar muita gente. 
+                  <br>
+                  Não  as vemos, mas elas estão permanentemente à nossa volta. As ondas eletromagnéticas são essenciais para a partilha de informação à distância e, depois da “invasão” dos telemóveis.
+                </p>
+              </div>
+              <div class="fullArticle lato-regular">
+                <a class="btnReadMore uppercase" href="">Ler artigo completo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="newsSection">
+          <div class="row">
+            <div class="newsImg col-lg-2 col-md-2 col-sm-3 col-xs-12">
+              <img src="assets/img/newsTwo.png">
+            </div>
+            <div class="newsDescription col-lg-10 col-md-10 col-sm-9 col-xs-12">
+              <h4 class="lato-regular">O WIFI é um risco para a saúde das crianças?</h4>
+              <div class="newsTxtBlock lato-light">
+                <p>
+                  <span class="highlight subTitle lato-regular uppercase">expresso</span> Os campos eletromagnéticos estão por todo o lado. E não se veem — daí, possivelmente, suscitarem tanto temor. Tudo o que o olho não consegue observar, a mente imagina a dobrar. Na última década, o nosso quotidiano alterou-se profundamente no que à parafernália tecnológica diz respeito. 
+                  <br>
+                  Integrámos inúmeros gadgets e trouxemo-los para dentro de casa. Pior: eles andam nas mãos dos nossos filhos, a toda a hora, se nos descuidarmos. 
+                </p>
+              </div>
+              <div class="fullArticle lato-regular">
+                <a class="btnReadMore uppercase" href="">Ler artigo completo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--Section Three Blocks-->
+    <div class="sectionGrey">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="blockOfThree">
+              <div class="imgBlockThree relative">
+                <img src="assets/img/imgTablet.jpg">
+                <div class="imgDescription uppercase">Patch tablet</div>
+              </div>
+              <div class="txtBlockThree lato-regular">
+                <p>
+                  O patch GINKO Control Tablet é destinado para laptops, tablets e jogos de rede de vídeo
+                </p>
+              </div>
+              <div class="btnBlockThree lato-bold">
+                <a class="btnMais uppercase" href="">ver mais</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="blockOfThree">
+              <div class="imgBlockThree relative">
+                <img src="assets/img/imgTel.jpg">
+                <div class="imgDescription uppercase">Patch telefone</div>
+              </div>
+              <div class="txtBlockThree lato-regular">
+                <p>O patch GINKO Control telefone  é destinado para todo o tipo de telefones móveis e smartphones.</p>
+              </div>
+              <div class="btnBlockThree lato-bold">
+                <a class="btnMais uppercase" href="">ver mais</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="blockOfThree">
+              <div class="imgBlockThree relative">
+                <img src="assets/img/imgWifi.jpg">
+                <div class="imgDescription uppercase">Patch wifi</div>
+              </div>
+              <div class="txtBlockThree lato-regular">
+                <p>O patch GINKO Control WIFI é destinado a todos os dispositivos WIFI e Bluetooth ( rato, auscultadores, auriculares , etc.) </p>
+              </div>
+              <div class="btnBlockThree lato-bold">
+                <a class="btnMais uppercase" href="">ver mais</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!--Footer-->
+    <div class="footer">
+      <a href="">
+        <div class="diamond">
+          <div class="arrowUp"></div>
+        </div> 
+      </a>
+      <div class="container">
+        <div class="row">
+          <div class="line col-lg-4 col-md-4"></div>
+          <div class="social col-lg-4 col-md-4">
+            <ul class="socialList">
+              <li>
+                <img src="assets/img/fbIcon.png" alt="Facebook">
+              </li>
+              <li>
+                <img src="assets/img/twitterIcon.png" alt="Twitter">
+              </li>
+              <li>
+                <img src="assets/img/pinterestIcon.png" alt="Pinterest">
+              </li>
+              <li>
+                <img src="assets/img/instagramIcon.png" alt="Instagram">
+              </li>
+            </ul>
+          </div>
+          <div class="line col-lg-4 col-md-4"></div>
+        </div>
+        <div class="row">
+          <div class="copy">
+            <p>© 2016 GINKO CONTROL - All rights reserved </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

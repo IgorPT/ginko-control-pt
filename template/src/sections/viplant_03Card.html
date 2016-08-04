@@ -1,0 +1,153 @@
+<div class="preview">Section Card</div>
+<div class="frontend">
+    <div class="sectionCard">
+      <div class="bgCard"></div>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-12 introArea">
+              <h2 class="green uppercase m300">{{mainTitle}}</h2>
+              <p class="blue m300">
+                  {{shortText}}
+              </p>
+            </div>
+            
+          
+            <div class="cardImg col-md-5 col-md-push-7 col-sm-12 col-xs-12">
+              <img src="{{summary_file}}" alt="Cartão Viplant">
+            </div>
+
+            <div class="cardTxt col-md-7 col-md-pull-5 col-sm-12 col-xs-12">
+                <ul class="row cardList">
+                  [[#each repIt]]
+                    <li>
+                      <div class="col-md-2 col-sm-12 col-xs-12 iconCard">
+                        <img src="[[item_file]]">
+                      </div>
+                      <div class="col-md-10 col-sm-12 ol-xs-12">
+                        <h4 class="titleCard green m500">[[item_adTitle]]</h4>
+                        <p class="blue m300">
+                            [[item_adDescription]]
+                         </p>
+                      </div>
+                    </li>
+                  [[/each]]
+                </ul>
+            </div>
+
+            <div class="requireCard col-md-12 col-sm-12 col-xs-12">
+              <a class="cardBtn uppercase m300" href="{{item_link}}">{{item_cta}}</a>
+            </div>
+
+        </div>
+      </div>
+      <span class="caret"></span>
+    </div>
+</div>
+<div class="summary"></div>
+<div class="backend">
+  
+    <div class="box box-element ui-draggable ng-scope lyrow">
+        <div class="row-fluid clearfix ng-scope">
+
+          <!--Intro Area-->
+          <div class="col-md-7 column ui-sortable form-horizontal">
+              <h3>Intro Area</h3>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Page Title</label>
+                <div class="col-sm-10">
+                  <input type="text" class='form-control' name="mainTitle" value="{{mainTitle}}" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Short Text</label>
+                <div class="col-sm-10">
+                  <textarea data-tinymce type="textarea" class='form-control' name="shortText" value="{{shortText}}"></textarea>
+                </div>
+              </div>
+          </div>
+          
+          <!--Image Area-->
+          <div class="col-md-7 column ui-sortable form-horizontal">
+            <h3>Image Upload</h3>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Summary Image</label>
+              <div class="col-sm-7">
+                <input name="{{summary_file}}" class="input-file filebutton" type="file">
+                <input class="filebuttoncta" type="button" ng-click="uploadImage()" value="Upload">
+              </div>
+              <div class="col-sm-3">
+                <input type="text" class='uploadPreview-src' name="title" value="{{summary_file.path}}"  />
+                <div class="uploadPreview"></div>
+              </div>
+            </div>
+          </div>
+
+          <!--Advantages Area-->
+          <!-- data-id="{{repeatfront=repIt}}" data-repeat="itemloop in" tem que exitir -->
+          <h3>Card Advantages</h3>
+          <div data-id="{{repeatfront=repIt}}" data-repeat="itemloop in">
+            <div class="col-md-7 column ui-sortable form-horizontal">
+              <!-- add more inputs if needed name is the smae as in front end-->
+              <div class="clearfix">
+                <a class="btn btn-danger pull-right" href="#" data-id="{{repeatfront=repIt}}" data-function="delThisEle" data-params="$index">X</a>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Icon Card Image</label>
+                <div class="col-sm-7">
+                  <input data-model="itemloop.item_file" name="{{file}}" class="input-file filebutton" type="file">
+                  <input data-id="{{repeatfront=repIt}}" class="filebuttoncta" type="button" data-function="uploadImage" data-params="{index: $index, key: 'item_file'}" value="Upload">
+                </div>
+                <div class="col-sm-3">
+                  <input data-model="itemloop.item_file" type="text" class='uploadPreview-src' name="title" />
+                  <div class="uploadPreview"></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Advantage Title</label>
+                <div class="col-sm-10">
+                  <input type="text" name="name" data-model="itemloop.item_adTitle" class='form-control'/>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Advantage Description</label>
+                <div class="col-sm-10">
+                  <input type="text" name="name" data-model="itemloop.item_adDescription" class='form-control'/>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <!-- data-id="{{repeatfront=repIt}}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+          
+          <!--Button Area-->
+          <div class="col-md-7 column ui-sortable form-horizontal">
+            <h3>Button</h3>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Button Text</label>
+                <div class="col-sm-10">
+                  <input type="text" class='form-control' name="item_cta" value="{{item_cta}}" />
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Button URL</label>
+                <div class="col-sm-10">
+                  <input type="text" class='form-control' name="item_link" value="{{item_link}}" />
+                </div>
+              </div>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

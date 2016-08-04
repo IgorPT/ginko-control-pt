@@ -1,0 +1,21 @@
+    <div ng-controller="menuSortCtrl">
+      <div ng-include="'/admin/views/header.html'"></div>
+      <div class="clearfix">
+        <h2>Avilable {[{groupName}]} menus</h2>
+        <div class="dd sortList">
+          <ol class="dd-list">
+
+            <li class="dd-item dd3-item" ng-repeat="m in menus" data-id="{[{m._id}]}">
+                <div class="dd-handle dd3-handle"></div>
+                <div class="dd3-content">{[{m.name}]} <span class="pull-right" ng-click="remove(m._id)">remove</span> <span class="pull-right" style="margin:0 10px"> | </span> <span class="pull-right" ng-click="edit(m._id)">edit</span></div>
+            </li>
+
+       </ol>
+      </div>
+
+    </div>
+    <button type="button" class="btn btn-primary navbar-btn" ng-click="saveOrder()">
+      <i class="fa icon-chevron-down" ></i>Save
+    </button>
+
+    </div>

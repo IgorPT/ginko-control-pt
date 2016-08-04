@@ -1,0 +1,58 @@
+<div ng-controller="editCtrl">
+  <div ng-include="'/admin/views/headerCTypes-top.html'"></div>
+  <div class="row">
+    <div class="box box-element ui-draggable lyrow ng-scope ele ele_1461866118827 col-md-9" style="display: block;">
+
+      <div class="blockElement" on-finish-render="ngRepeatFinished">
+        <div class="row-fluid clearfix">
+          <div class="col-md-12 column ui-sortable">
+
+            <div class="box box-element ui-draggable lyrow ng-scope ele ele_1461866170666 col-md-9" style="display: block; position: relative; opacity: 1; z-index: 0;">
+
+              <div class="blockElement" on-finish-render="ngRepeatFinished">
+                <label class="control-label" contenteditable="false">Description</label>
+
+              </div>
+            </div>
+            <div class="box box-element ui-draggable lyrow ng-scope ele ele_1461866182001 col-md-9" style="display: block;">
+
+              <div class="blockElement" on-finish-render="ngRepeatFinished">
+                <textarea class="form-control" ng-model="setData.textarea_1461866182001">{[{textarea_1461866182001}]}</textarea>
+
+              </div>
+            </div>
+            <div class="box box-element ui-draggable lyrow ng-scope ele ele_1461867350921 col-md-9" style="display: block;">
+
+              <div class="blockElement" on-finish-render="ngRepeatFinished">
+                <label class="control-label" contenteditable="false">Images</label>
+
+              </div>
+            </div>
+            <div class="box box-element ui-draggable lyrow ng-scope ele ele_1461867274340 col-md-9" style="display: block;">
+
+              <div class="blockElement" on-finish-render="ngRepeatFinished">
+                <div>
+                  <label>Repeater Test</label>
+                  <!-- data-id="{[{repeatfront.repIt_1461867274340}]}" data-repeat="itemloop in" tem que exitir -->
+                <li data-repeat="itemloop in" ng-repeat="itemloop in setData.repeatfront.repIt_1461867274340">
+                  {[{index_1461867274340}]}
+                  <!-- data-model="itemloop.item_name" tem que exitir alwways with item like -->
+                  <input type="text" name="name" data-model="itemloop.item_name" ng-model="itemloop.item_name">
+                  <input type="text" name="link" data-model="itemloop.item_link" ng-model="itemloop.item_link">
+                  <input data-model="itemloop.item_file" name="{[{file_1461867274340}]}" class="input-file filebutton" type="file" file-model="setData.file_1461867274340" ng-model="itemloop.item_file">
+                  <input class="filebuttoncta" type="button" value="Upload" ng-click="uploadImage('setData.repeatfront.repIt_1461867274340',{index: $index, key: 'item_file'})">
+                  <!-- add more inputs if needed name is the smae as in front end-->
+                  <a href="#" ng-click="delThisEle('setData.repeatfront.repIt_1461867274340',$index)">X</a>
+                </li>
+                <!-- data-id="{[{repeatfront.repIt_1461867274340}]}" data-function="addanother" data-params="{name:''}" tem que exitir -->
+                <button class="btn btn-primary navbar-btn" ng-click="addanother('setData.repeatfront.repIt_1461867274340',{item_name:'', item_link:'', item_file:''})">Add another</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3" ng-include="'/admin/views/headerCTypes.html'"></div>
+</div>
+</div>
